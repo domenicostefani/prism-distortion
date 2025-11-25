@@ -30,21 +30,22 @@ MBDistEditor::MBDistEditor (MBDistProcessor& p)
     setConstrainer(&constrainer);
     
     
-    juce::File back_jpg_file = juce::File("C:/Users/cimil/Develop/paper-ideas/Ardan-JAES-25/MultibandDistortion/Source/Data/background.jpg");
-    // background_jpg_drawable = juce::Drawable::createFromImageData(BinaryData::background_jpg,BinaryData::background_jpgSize);
-    background_jpg_drawable = juce::Drawable::createFromImageFile(back_jpg_file);
+    // juce::File back_jpg_file = juce::File("C:/Users/cimil/Develop/paper-ideas/Ardan-JAES-25/MultibandDistortion/Source/Data/background.jpg");
+    // background_jpg_drawable = juce::Drawable::createFromImageFile(back_jpg_file);
+    background_jpg_drawable = juce::Drawable::createFromImageData(BinaryData::background_jpg,BinaryData::background_jpgSize);
 
-    juce::File back_svg_file = juce::File("C:/Users/cimil/Develop/paper-ideas/Ardan-JAES-25/MultibandDistortion/Source/Data/backing.svg");
-    pedal_svg_drawable = juce::Drawable::createFromSVGFile(back_svg_file);
-    // std::unique_ptr<juce::XmlElement> xml_background_svg = juce::XmlDocument::parse(BinaryData::backing_svg); // GET THE SVG AS A XML
-    // pedal_svg_drawable = juce::Drawable::createFromSVG(*xml_background_svg);
+    // juce::File back_svg_file = juce::File("C:/Users/cimil/Develop/paper-ideas/Ardan-JAES-25/MultibandDistortion/Source/Data/backing.svg");
+    // pedal_svg_drawable = juce::Drawable::createFromSVGFile(back_svg_file);
+    std::unique_ptr<juce::XmlElement> xml_background_svg = juce::XmlDocument::parse(BinaryData::backing_svg); // GET THE SVG AS A XML
+    pedal_svg_drawable = juce::Drawable::createFromSVG(*xml_background_svg);
 
-    juce::File ledOn_png_file = juce::File("C:/Users/cimil/Develop/paper-ideas/Ardan-JAES-25/MultibandDistortion/Source/Data/led-on.png");
-    ledOn_png_drawable = juce::Drawable::createFromImageFile(ledOn_png_file);
-    // ledOn_png_drawable = juce::Drawable::createFromImageData(BinaryData::led_on_png,BinaryData::led_on_pngSize);
-    juce::File ledOff_png_file = juce::File("C:/Users/cimil/Develop/paper-ideas/Ardan-JAES-25/MultibandDistortion/Source/Data/led-off.png");
-    ledOff_png_drawable = juce::Drawable::createFromImageFile(ledOff_png_file);
-    // ledOff_png_drawable = juce::Drawable::createFromImageData(BinaryData::led_off_png,BinaryData::led_off_pngSize);
+    // juce::File ledOn_png_file = juce::File("C:/Users/cimil/Develop/paper-ideas/Ardan-JAES-25/MultibandDistortion/Source/Data/led-on.png");
+    // ledOn_png_drawable = juce::Drawable::createFromImageFile(ledOn_png_file);
+    ledOn_png_drawable = juce::Drawable::createFromImageData(BinaryData::ledon_png,BinaryData::ledon_pngSize);
+
+    // juce::File ledOff_png_file = juce::File("C:/Users/cimil/Develop/paper-ideas/Ardan-JAES-25/MultibandDistortion/Source/Data/led-off.png");
+    // ledOff_png_drawable = juce::Drawable::createFromImageFile(ledOff_png_file);
+    ledOff_png_drawable = juce::Drawable::createFromImageData(BinaryData::ledoff_png,BinaryData::ledoff_pngSize);
     
     // Bypassbutton
     addAndMakeVisible(bypassButton);

@@ -16,7 +16,7 @@ set(CMAKE_OSX_DEPLOYMENT_TARGET "13.0" CACHE STRING "Minimum OS X deployment ver
 # `project()` command. `project()` sets up some helpful variables that describe source/binary
 # directories, and the current project version. This is a standard CMake command.
 
-project(MBDist VERSION 0.0.1)
+project(Prism VERSION 0.0.1)
 
 # If you've installed JUCE somehow (via a package manager, or directly using the CMake install
 # target), you'll need to tell this project that it depends on the installed copy of JUCE. If you've
@@ -60,23 +60,23 @@ message(STATUS "VST3_COPY_DIR: ${VST3_COPY_DIR}")
 # the formats specified by the FORMATS arguments. This function accepts many optional arguments.
 # Check the readme at `docs/CMake API.md` in the JUCE repo for the full list.
 
-juce_add_plugin(MBDist          # The name of the target to create
+juce_add_plugin(Prism          # The name of the target to create
     # VERSION 1.0                               # Set this if the plugin version is different to the project version
-    # ICON_BIG "Source/Data/icon-big.png"            # ICON_* arguments specify a path to an image file to use as an icon for the Standalone
-    # ICON_SMALL "Source/Data/icon-small.png"
+    ICON_BIG "Source/Data/icon-big.png"            # ICON_* arguments specify a path to an image file to use as an icon for the Standalone
+    ICON_SMALL "Source/Data/icon-small.png"
     COMPANY_NAME "OnyxDSP"                          # Specify the name of the plugin's author
-    IS_SYNTH TRUE                       # Is this a synth or an effect?
-    NEEDS_MIDI_INPUT TRUE               # Does the plugin need midi input?
+    IS_SYNTH FALSE                       # Is this a synth or an effect?
+    NEEDS_MIDI_INPUT FALSE               # Does the plugin need midi input?
     # NEEDS_MIDI_OUTPUT TRUE/FALSE              # Does the plugin need midi output?
     # IS_MIDI_EFFECT TRUE/FALSE                 # Is this plugin a MIDI effect?
     # EDITOR_WANTS_KEYBOARD_FOCUS TRUE/FALSE    # Does the editor need keyboard focus?
     COPY_PLUGIN_AFTER_BUILD TRUE                # Should the plugin be installed to a default location after building?
     VST3_COPY_DIR "${VST3_COPY_DIR}"            # If COPY_PLUGIN_AFTER_BUILD is TRUE, this specifies the directory to copy the VST3 to
     PLUGIN_MANUFACTURER_CODE OnyD               # A four-character manufacturer id with at least one upper-case character
-    PLUGIN_CODE Mbdi                            # A unique four-character plugin id with exactly one upper-case character
+    PLUGIN_CODE Prsm                            # A unique four-character plugin id with exactly one upper-case character
                                                 # GarageBand 10.3 requires the first letter to be upper-case, and the remaining letters to be lower-case
     FORMATS VST3 Standalone                  # The formats to build. Other valid formats are: AAX Unity VST AU AUv3
-    PRODUCT_NAME "MultiBand Neural Distortion")        # The name of the final executable, which can differ from the target name
+    PRODUCT_NAME "Prism")        # The name of the final executable, which can differ from the target name
 
 # `juce_generate_juce_header` will create a JuceHeader.h for a given target, which will be generated
 # into your build tree. This should be included with `#include <JuceHeader.h>`. The include path for
@@ -84,11 +84,11 @@ juce_add_plugin(MBDist          # The name of the target to create
 # include all your JUCE module headers; if you're happy to include module headers directly, you
 # probably don't need to call this.
 
-juce_generate_juce_header(MBDist)
+juce_generate_juce_header(Prism)
 
 
 if(MSVC)
-    target_compile_options(MBDist PRIVATE /wd4068) # Suppress warning about unknown pragma on windows
+    target_compile_options(Prism PRIVATE /wd4068) # Suppress warning about unknown pragma on windows
 endif()
 
 
@@ -98,7 +98,7 @@ endif()
 # Finally, we supply a list of source files that will be built into the target. This is a standard
 # CMake command.
 
-target_sources(MBDist
+target_sources(Prism
     PRIVATE
         Source/PluginEditor.cpp
         Source/PluginProcessor.cpp)
@@ -110,7 +110,7 @@ target_sources(MBDist
 # definitions will be visible both to your code, and also the JUCE module code, so for new
 # definitions, pick unique names that are unlikely to collide! This is a standard CMake command.
 
-target_compile_definitions(MBDist
+target_compile_definitions(Prism
     PUBLIC
         # JUCE_WEB_BROWSER and JUCE_USE_CURL would be on by default, but you might not need them.
         JUCE_WEB_BROWSER=0  # If you remove this, add `NEEDS_WEB_BROWSER TRUE` to the `juce_add_plugin` call
@@ -129,12 +129,14 @@ juce_add_binary_data(AudioPluginData SOURCES
     Source/Data/slider_back.svg
     Source/Data/slider_cursor.svg
     Source/Data/background.jpg
+    Source/Data/led-on.png
+    Source/Data/led-off.png
     )
 
 if (APPLE)
-    # target_link_options(MBDist PUBLIC -Wl)
+    # target_link_options(Prism PUBLIC -Wl)
     message(STATUS "Adding flag to suppress shadow field warning")
-    target_compile_options(MBDist PRIVATE -Wno-shadow-field-in-constructor)
+    target_compile_options(Prism PRIVATE -Wno-shadow-field-in-constructor)
 endif()
 
 # add_library(juce_custom_warning_suppressions INTERFACE)
@@ -150,7 +152,7 @@ endif()
 # linked automatically. If we'd generated a binary data target above, we would need to link to it
 # here too. This is a standard CMake command.
 
-target_link_libraries(MBDist
+target_link_libraries(Prism
     PRIVATE
         AudioPluginData
         juce::juce_audio_utils
