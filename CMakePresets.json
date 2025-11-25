@@ -14,7 +14,8 @@
       "binaryDir": "${sourceDir}/build/VisualStudio2022/x64",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release",
-        "VST3_COPY_DIR": "$ENV{USERPROFILE}/Documents/VST_DEBUG"
+        "VST3_COPY_DIR": "$ENV{USERPROFILE}/Documents/VST_DEBUG",
+        "JUCE_PATH": "C:/JUCE"
       }
     },
     {
@@ -25,7 +26,8 @@
       "binaryDir": "${sourceDir}/build/VisualStudio2022/x64",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
-        "VST3_COPY_DIR": "$ENV{USERPROFILE}/Documents/VST_DEBUG"
+        "VST3_COPY_DIR": "$ENV{USERPROFILE}/Documents/VST_DEBUG",
+        "JUCE_PATH": "C:/JUCE"
       }
     },
     {
@@ -35,7 +37,8 @@
       "binaryDir": "${sourceDir}/build/MacOS",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release",
-        "VST3_COPY_DIR": "$ENV{HOME}/Library/Audio/VST_DEBUG"
+        "VST3_COPY_DIR": "$ENV{HOME}/Library/Audio/VST_DEBUG",
+        "JUCE_PATH": "/Users/domenico/Develop/JUCE"
       }
     },
     {
@@ -45,7 +48,8 @@
       "binaryDir": "${sourceDir}/build/MacOS",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
-        "VST3_COPY_DIR": "$ENV{HOME}/Library/Audio/VST_DEBUG"
+        "VST3_COPY_DIR": "$ENV{HOME}/Library/Audio/VST_DEBUG",
+        "JUCE_PATH": "/Users/domenico/Develop/JUCE"
       }
     }
   ],

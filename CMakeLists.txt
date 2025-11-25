@@ -24,9 +24,9 @@ project(Prism VERSION 0.0.1)
 # include that subdirectory as part of the build.
 
 # find_package(JUCE CONFIG REQUIRED)        # If you've installed JUCE to your system
-# or
-set(JUCE_PATH "C:/ProgramFiles/JUCE" CACHE PATH "Path to JUCE framework")                    # Change this to point to your local JUCE folder
-add_subdirectory(${JUCE_PATH} JUCE)         # If you've put JUCE in a subdirectory called JUCE
+# or             # Change this to point to your local JUCE folder
+set(JUCE_PATH "C:/JUCE" CACHE PATH "Path to JUCE framework")
+add_subdirectory(${JUCE_PATH} JUCE)
 
 # Detect platform-specific default plugin/debug folder
 if(WIN32)
