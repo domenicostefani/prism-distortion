@@ -11,11 +11,15 @@
 #include <JuceHeader.h>
 
 #define NUM_BANDS 8
+#define OSC 
 
 //==============================================================================
 /**
 */
-class MBDistProcessor  : public juce::AudioProcessor
+class MBDistProcessor  : public juce::AudioProcessor, 
+                        #ifdef OSC
+                            AudioProcessorValueTreeState::Listener
+                        #endif
 {
 public:
 
@@ -59,6 +63,16 @@ public:
     juce::AudioProcessorValueTreeState apvts{ *this, nullptr };
     //createLayout function declaration
     static juce::AudioProcessorValueTreeState::ParameterLayout createLayout();
+
+    const static juce::StringArray bandEffects;
+#ifdef OSC
+    void parameterChanged (const String& parameterID, float newValue) override;
+    juce::String oscIP = "127.0.0.1";
+    int oscPortOut = 9000;
+    // Osc Sender
+    std::unique_ptr<juce::OSCSender> oscSender;
+#endif
+
 
 private:
     //==============================================================================

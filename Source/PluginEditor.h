@@ -9,6 +9,7 @@
 #include "laf.h"
 
 typedef juce::AudioProcessorValueTreeState::SliderAttachment SliderAttachment;
+typedef juce::AudioProcessorValueTreeState::ButtonAttachment ButtonAttachment;
 
 
 //==============================================================================
@@ -29,7 +30,10 @@ private:
     // access the processor object that created it.
     MBDistProcessor& audioProcessor;
 
-    std::unique_ptr<juce::Drawable> background_svg_drawable;
+    std::unique_ptr<juce::Drawable> pedal_svg_drawable,
+                                    background_jpg_drawable,
+                                    ledOn_png_drawable,
+                                    ledOff_png_drawable;
     juce::ComponentBoundsConstrainer constrainer;
 
     const int ORIGIN_WIDTH = 794;
@@ -81,14 +85,14 @@ private:
     //                                   ampEnvRAttachment;
 
     std::array<std::pair<std::string,std::string>,8> bandFrequencies = {{
-        {"40", "500 Hz"},
-        {"500", "1 KHz"},
-        {"1", "1.6 KHz"},
-        {"1.6", "2.7 KHz"},
-        {"2.7", "4.5 kHz"},
-        {"4.5", "7.4 kHz"},
-        {"7.4", "12 kHz"},
-        {"12", "20 kHz"}
+        {"40", "500"},
+        {"500", "1k"},
+        {"1k", "1.6k"},
+        {"1.6k", "2.7k"},
+        {"2.7k", "4.5k"},
+        {"4.5k", "7.4k"},
+        {"7.4k", "12k"},
+        {"12k", "20k"}
     }};
 
 
@@ -103,6 +107,19 @@ private:
     // attachments for the gain and tone sliders
     std::array<std::unique_ptr<SliderAttachment>, 8> bandGainAttachments;
     std::array<std::unique_ptr<SliderAttachment>, 8> bandToneAttachments;
+
+    // Effect type colors:
+    // Overdrive: #6696ed
+    // Distortion: #ffd703
+    // Fuzz: #ff0303
+
+    const std::map<juce::String, juce::Colour> effectTypeColors = {
+        {"Overdrive", juce::Colour::fromString("#886696ed")},
+        {"Distortion", juce::Colour::fromString("#88ffd703")},
+        {"Fuzz", juce::Colour::fromString("#88ff0303")}
+    };
+
+    std::array<juce::Colour, 8> bandColors = {};
                                     
     // Rotary sliders
     juce::Slider octave_knob{ "octave_knob"},
@@ -113,6 +130,10 @@ private:
                                       osc2tuneAttachment,
                                       osc2fineAttachment,
                                       tuningAttachment;
+
+    juce::TextButton bypassButton{ "bypassButton"};
+    std::unique_ptr<ButtonAttachment> bypassAttachment;
+    bool bypass = false;
 
     juce::Label currentProgram, sllinkStatus;
     juce::TextButton programButton;

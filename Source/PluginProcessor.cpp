@@ -23,11 +23,54 @@ MBDistProcessor::MBDistProcessor()
          apvts(*this, nullptr, "Parameters", createLayout())
 #endif
 {
+#ifdef OSC
+    oscSender = std::make_unique<juce::OSCSender>();
+    oscSender->connect(oscIP, oscPortOut);
+
+    for (auto& param : this->getParameters())
+    {
+        // try static cast to AudioParameterWithID
+        try {
+            juce::AudioProcessorParameterWithID* p = dynamic_cast<juce::AudioProcessorParameterWithID*>(param);
+            if (p != nullptr)
+            {
+                apvts.addParameterListener (p->getParameterID(), this);
+            }
+        } catch (...) {
+            // do nothing
+        }
+    }
+#endif
 }
 
 MBDistProcessor::~MBDistProcessor()
 {
+    
+    for (auto& param : this->getParameters())
+    {
+        // try static cast to AudioParameterWithID
+        try {
+            juce::AudioProcessorParameterWithID* p = dynamic_cast<juce::AudioProcessorParameterWithID*>(param);
+            if (p != nullptr)
+            {
+                apvts.removeParameterListener (p->getParameterID(), this);
+            }
+        } catch (...) {
+            // do nothing
+        }
+    }
 }
+
+#ifdef OSC
+void MBDistProcessor::parameterChanged (const String& parameterID, float newValue) {
+    juce::OSCMessage msg("/parameterChanged");
+    msg.addString(parameterID);
+    msg.addFloat32(newValue);
+    oscSender->send(msg);
+}
+#endif
+
+const juce::StringArray MBDistProcessor::bandEffects = { "Distortion", "Fuzz", "Overdrive" };
 
 // Create layout function
 juce::AudioProcessorValueTreeState::ParameterLayout MBDistProcessor::createLayout()
@@ -35,14 +78,21 @@ juce::AudioProcessorValueTreeState::ParameterLayout MBDistProcessor::createLayou
     // Create a vector to hold the parameters
     std::vector<std::unique_ptr<juce::RangedAudioParameter>> params;
 
+    // Bypass
+    params.push_back(std::make_unique<juce::AudioParameterBool>(
+        "Bypass",
+        "Bypass",
+        false
+    ));
+
     for(int i=0; i<NUM_BANDS; ++i)
     {
         const int BAND_OPTIONS = 3; // Distortion, Gain, Tone
         params.push_back(std::make_unique<juce::AudioParameterChoice>(
             "Band" + std::to_string(i + 1),
             "Band " + std::to_string(i + 1) + " Effect",
-            juce::StringArray{ "Distortion", "Fuzz", "Overdrive" },
-            0
+            bandEffects,
+            (int)(i  / 3)
         ));
 
         params.push_back(std::make_unique<juce::AudioParameterFloat>(
@@ -113,24 +163,39 @@ int MBDistProcessor::getCurrentProgram()
     return 0;
 }
 
-void MBDistProcessor::setCurrentProgram (int index)
+void MBDistProcessor::setCurrentProgram (int /*index*/)
 {
 }
 
-const juce::String MBDistProcessor::getProgramName (int index)
+const juce::String MBDistProcessor::getProgramName (int /*index*/)
 {
     return {};
 }
 
-void MBDistProcessor::changeProgramName (int index, const juce::String& newName)
+void MBDistProcessor::changeProgramName (int /*index*/, const juce::String& /*newName*/)
 {
 }
 
 //==============================================================================
-void MBDistProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
+void MBDistProcessor::prepareToPlay (double /*sampleRate*/, int /*samplesPerBlock*/)
 {
     // Use this method as the place to do any pre-playback
     // initialisation that you need..
+    for (auto& param : this->getParameters())
+    {
+        // try static cast to AudioParameterWithID
+        try {
+            juce::AudioProcessorParameterWithID* p = dynamic_cast<juce::AudioProcessorParameterWithID*>(param);
+            if (p != nullptr)
+            {
+                // void MBDistProcessor::parameterChanged (const String& parameterID, float newValue) {
+                auto value = apvts.getRawParameterValue(p->getParameterID());
+                parameterChanged(p->getParameterID(), value->load());
+            }
+        } catch (...) {
+            // do nothing
+        }
+    }
 }
 
 void MBDistProcessor::releaseResources()

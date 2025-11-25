@@ -18,7 +18,7 @@ MBDistEditor::MBDistEditor (MBDistProcessor& p)
     // editor's size to whatever you need it to be.
     setSize (ORIGIN_WIDTH, ORIGIN_HEIGHT);
 
-    setResizable(true, true);
+    // setResizable(true, true);
 
     
     constrainer.setFixedAspectRatio(ASPECT_RATIO);
@@ -29,12 +29,29 @@ MBDistEditor::MBDistEditor (MBDistProcessor& p)
     constrainer.setMaximumHeight(ORIGIN_HEIGHT * 4);
     setConstrainer(&constrainer);
     
-    juce::File back_svg_file = juce::File("C:/Users/cimil/Develop/paper-ideas/Ardan-JAES-25/MultibandDistortion/Source/Data/backing.svg");
-    background_svg_drawable = juce::Drawable::createFromSVGFile(back_svg_file);
-    // std::unique_ptr<juce::XmlElement> xml_background_svg = juce::XmlDocument::parse(BinaryData::backing_svg); // GET THE SVG AS A XML
-    // background_svg_drawable = juce::Drawable::createFromSVG(*xml_background_svg);
-
     
+    juce::File back_jpg_file = juce::File("C:/Users/cimil/Develop/paper-ideas/Ardan-JAES-25/MultibandDistortion/Source/Data/background.jpg");
+    // background_jpg_drawable = juce::Drawable::createFromImageData(BinaryData::background_jpg,BinaryData::background_jpgSize);
+    background_jpg_drawable = juce::Drawable::createFromImageFile(back_jpg_file);
+
+    juce::File back_svg_file = juce::File("C:/Users/cimil/Develop/paper-ideas/Ardan-JAES-25/MultibandDistortion/Source/Data/backing.svg");
+    pedal_svg_drawable = juce::Drawable::createFromSVGFile(back_svg_file);
+    // std::unique_ptr<juce::XmlElement> xml_background_svg = juce::XmlDocument::parse(BinaryData::backing_svg); // GET THE SVG AS A XML
+    // pedal_svg_drawable = juce::Drawable::createFromSVG(*xml_background_svg);
+
+    juce::File ledOn_png_file = juce::File("C:/Users/cimil/Develop/paper-ideas/Ardan-JAES-25/MultibandDistortion/Source/Data/led-on.png");
+    ledOn_png_drawable = juce::Drawable::createFromImageFile(ledOn_png_file);
+    // ledOn_png_drawable = juce::Drawable::createFromImageData(BinaryData::led_on_png,BinaryData::led_on_pngSize);
+    juce::File ledOff_png_file = juce::File("C:/Users/cimil/Develop/paper-ideas/Ardan-JAES-25/MultibandDistortion/Source/Data/led-off.png");
+    ledOff_png_drawable = juce::Drawable::createFromImageFile(ledOff_png_file);
+    // ledOff_png_drawable = juce::Drawable::createFromImageData(BinaryData::led_off_png,BinaryData::led_off_pngSize);
+    
+    // Bypassbutton
+    addAndMakeVisible(bypassButton);
+    bypassButton.setLookAndFeel(&invisibleButtonLaF);
+    bypassAttachment = std::make_unique<ButtonAttachment>(audioProcessor.apvts, "Bypass", bypassButton);
+    bypassButton.setClickingTogglesState(true);
+
     for (int i = 0; i < bandSliders.size(); ++i)
     {
         auto& slider = bandSliders[i];
@@ -108,24 +125,56 @@ void MBDistEditor::paint (juce::Graphics& g)
 {
     g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));
 
-    auto lb = getLocalBounds();
-    background_svg_drawable->drawWithin(
+    auto area = getLocalBounds();
+    background_jpg_drawable->drawWithin(
         g, 
-        lb.toFloat(), 
+        area.toFloat(), 
         juce::RectanglePlacement::fillDestination
         | juce::RectanglePlacement::xLeft | juce::RectanglePlacement::yTop,
         1.0f
     );
 
-    auto area = getLocalBounds();
+    pedal_svg_drawable->drawWithin(
+        g, 
+        area.toFloat(), 
+        juce::RectanglePlacement::fillDestination
+        | juce::RectanglePlacement::xLeft | juce::RectanglePlacement::yTop,
+        1.0f
+    );
+
+    // juce::Colour ledColour = bypass ? juce::Colour::fromString("#ff3c3c3c") : juce::Colour::fromString("#ffcb7bdd");
+    const int lexX = 440, ledY = 320;
+    juce::Rectangle<int> ledArea(lexX, ledY, 18, 18);
+    // g.setColour(ledColour);
+    // g.fillEllipse(lexX, ledY, 15, 15);
+    // g.setColour(juce::Colours::black);
+    // g.drawEllipse(lexX, ledY, 15, 15, 1.0f);
+
+    if (bypass)
+    {
+        ledOff_png_drawable->drawWithin(
+            g, 
+            ledArea.toFloat(), 
+            juce::RectanglePlacement::fillDestination
+            | juce::RectanglePlacement::xLeft | juce::RectanglePlacement::yTop,
+            1.0f);
+    } else {
+        ledOn_png_drawable->drawWithin(
+            g, 
+            ledArea.toFloat(), 
+            juce::RectanglePlacement::fillDestination
+            | juce::RectanglePlacement::xLeft | juce::RectanglePlacement::yTop,
+            1.0f
+        );
+    }
 
     const int BAND_WIDTH = 18;
-    const int BAND_HEIGHT = 122;
+    const int BAND_HEIGHT = 90;
 
     const int GAIN_KNOB_SIZE = 30;
 
     // first band slider at (197,161), all the other +71 x
-    int bandX = 210, bandY = 160, offsetX = 70;
+    int bandX = 200, bandY = 160, offsetX = 68;
     // First gain knob at (191, 63) size 31x31, offsetX = 71
     int gainKnobX = bandX - (GAIN_KNOB_SIZE-BAND_WIDTH)/2, 
         gainKnobY = 47;
@@ -137,7 +186,8 @@ void MBDistEditor::paint (juce::Graphics& g)
     const int margin = 10;
     for (int i = 0; i < bandSliders.size(); ++i)
     {
-        g.setColour(juce::Colour::fromString("#ffd1d1d1"));
+        // g.setColour(juce::Colour::fromString("#ffd1d1d1"));
+        g.setColour(bandColors[i]);
 
         juce::Rectangle<int> gainToneArea(gainKnobX, gainKnobY, jmax(GAIN_KNOB_SIZE, toneKnobSize), (toneKnobY + toneKnobSize) - gainKnobY);
         auto expGainToneArea = gainToneArea.expanded(margin, margin).toFloat();
@@ -156,18 +206,30 @@ void MBDistEditor::paint (juce::Graphics& g)
                                margin/2.0f);
         bandSliders[i].setBounds(juce::Rectangle<int>(bandX, bandY, BAND_WIDTH, BAND_HEIGHT));
 
-
-        g.setFont(_MBDistLaF.mainFont.withHeight(18.0f));
-        g.drawText(bandFrequencies[i].first + " -\n" + bandFrequencies[i].second,
-                   bandX - 20,
-                   textY,
-                   BAND_WIDTH + 40,
-                   20,
-                   juce::Justification::centred);
-
+        int TEXT_HEIGHT = 15;
+        g.setColour(juce::Colours::black);
+        g.setFont(_MBDistLaF.mainFont.withHeight(TEXT_HEIGHT));
+        g.drawText(bandFrequencies[i].first,
+                   bandX - 40,
+                   textY+10,
+                   BAND_WIDTH + 20,
+                   15,
+                   juce::Justification::left);
+        if (i == bandSliders.size() -1)
+        {
+            g.drawText(bandFrequencies[i].second,
+                   bandX + 10,
+                   textY + 10,
+                   BAND_WIDTH + 30,
+                   15,
+                   juce::Justification::right);
+        }
 
         bandX += offsetX;
     }
+
+    const int buttonX = 383, buttonY = 340, buttonW = 55, buttonH = 55;
+    bypassButton.setBounds(juce::Rectangle<int>(buttonX, buttonY, buttonW, buttonH));
 
     // Calculate scale factors
     float scaleX = area.getWidth() / (float)ORIGIN_WIDTH;
@@ -207,7 +269,24 @@ void MBDistEditor::resized()
 
 void MBDistEditor::timerCallback()
 {
+    for (int i = 0; i < bandSliders.size(); ++i)
+    {
+        // Assign colors based on Band[1-8] parameter
+        std::atomic<float>* bandParam = audioProcessor.apvts.getRawParameterValue("Band" + std::to_string(i + 1));
+        float bandValue = bandParam->load();
+
+        juce::String effectType = MBDistProcessor::bandEffects[(int)bandValue];
+        juce::Colour effectColor = effectTypeColors.at(effectType.toStdString());
+        bandColors[i] = effectColor;
+    }
+
+    // Bypass
+    std::atomic<float>* bypassParam = audioProcessor.apvts.getRawParameterValue("Bypass");
+    float bypassValue = bypassParam->load();
     
+    bypass = (bypassValue >= 0.5f);
+
+    repaint();
 }
 
 void MBDistEditor::showFileMenu(juce::TextButton* button)

@@ -127,7 +127,9 @@ target_compile_definitions(MBDist
 juce_add_binary_data(AudioPluginData SOURCES 
     Source/Data/backing.svg
     Source/Data/slider_back.svg
-    Source/Data/slider_cursor.svg)
+    Source/Data/slider_cursor.svg
+    Source/Data/background.jpg
+    )
 
 if (APPLE)
     # target_link_options(MBDist PUBLIC -Wl)
@@ -152,6 +154,7 @@ target_link_libraries(MBDist
     PRIVATE
         AudioPluginData
         juce::juce_audio_utils
+        juce::juce_osc
     PUBLIC
         juce::juce_recommended_config_flags
         juce::juce_recommended_lto_flags
