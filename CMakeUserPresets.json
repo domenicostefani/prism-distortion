@@ -6,7 +6,8 @@
       "displayName": "USER Win MSVC17 Release",
       "inherits": "msvc-release",
       "cacheVariables": {
-        "JUCE_PATH": "C:/Users/cimil/Develop/ONYX/onyx-saturo-plugin/JUCE"
+        "JUCE_PATH": "C:/Users/cimil/Develop/ONYX/onyx-saturo-plugin/JUCE",
+            "Torch_DIR": "D:/libtorch-win-shared-with-deps-2.9.1+cpu/libtorch/share/cmake/Torch"
       }
     },
     {
@@ -14,7 +15,8 @@
       "displayName": "USER Win MSVC17 Debug",
       "inherits": "msvc-debug",
       "cacheVariables": {
-        "JUCE_PATH": "C:/Users/cimil/Develop/ONYX/onyx-saturo-plugin/JUCE"
+        "JUCE_PATH": "C:/Users/cimil/Develop/ONYX/onyx-saturo-plugin/JUCE",
+            "Torch_DIR": "D:/libtorch-win-shared-with-deps-2.9.1+cpu/libtorch/share/cmake/Torch"
       }
     },
     {

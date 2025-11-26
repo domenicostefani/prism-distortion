@@ -292,6 +292,21 @@ void MBDistEditor::paint (juce::Graphics& g)
     websiteButton.setBounds(juce::Rectangle<int>(webX, webY, webW, webH));
 
     
+#ifndef OSC
+    // If not using OSC, we are using the neural network.
+    // Print a biig warning if sample rate is not 48000 Hz
+    if (this->sampleRate != 48000.0)
+    {
+        g.setFont(_MBDistLaF.mainFont.withHeight(20.0f));
+        juce::String warningText = "Warning: Sample rate is not 48kHz!";
+        int warningX = 150, warningY = 10, warningW = 500, warningH = 30;
+        transform.transformPoints(warningX, warningY, warningW, warningH);
+        g.setColour(juce::Colours::grey);
+        g.drawRect(warningX, warningY, warningW, warningH);
+        g.setColour(juce::Colours::red);
+        g.drawText(warningText, warningX, warningY, warningW, warningH, juce::Justification::centred);
+    }
+#endif
     
 
     // Apply the transform to components
@@ -333,6 +348,8 @@ void MBDistEditor::timerCallback()
     float bypassValue = bypassParam->load();
     
     bypass = (bypassValue >= 0.5f);
+
+    this->sampleRate = audioProcessor.sampleRate.load();
 
     repaint();
 }

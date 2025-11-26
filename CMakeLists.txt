@@ -18,6 +18,12 @@ set(CMAKE_OSX_DEPLOYMENT_TARGET "13.0" CACHE STRING "Minimum OS X deployment ver
 
 project(Prism VERSION 0.0.1)
 
+# Find LibTorch
+set(Torch_DIR "D:/libtorch-win-shared-with-deps-2.9.1+cpu/libtorch/share/cmake/Torch")
+find_package(Torch REQUIRED)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${TORCH_CXX_FLAGS}")
+
+
 # If you've installed JUCE somehow (via a package manager, or directly using the CMake install
 # target), you'll need to tell this project that it depends on the installed copy of JUCE. If you've
 # included JUCE directly in your source tree (perhaps as a submodule), you'll need to tell CMake to
@@ -75,7 +81,7 @@ juce_add_plugin(Prism          # The name of the target to create
     PLUGIN_MANUFACTURER_CODE OnyD               # A four-character manufacturer id with at least one upper-case character
     PLUGIN_CODE Prsm                            # A unique four-character plugin id with exactly one upper-case character
                                                 # GarageBand 10.3 requires the first letter to be upper-case, and the remaining letters to be lower-case
-    FORMATS VST3 Standalone                  # The formats to build. Other valid formats are: AAX Unity VST AU AUv3
+    FORMATS Standalone                  # The formats to build. Other valid formats are: AAX Unity VST AU AUv3
     PRODUCT_NAME "Prism")        # The name of the final executable, which can differ from the target name
 
 # `juce_generate_juce_header` will create a JuceHeader.h for a given target, which will be generated
@@ -145,6 +151,15 @@ endif()
 # -Wno-shadow-field-in-constructor
 # # Add other custom flags here as needed
 # )
+
+set(TORCH_INCLUDE_DIRS "D:/libtorch-win-shared-with-deps-2.9.1+cpu/libtorch/include;D:/libtorch-win-shared-with-deps-2.9.1+cpu/libtorch/include/torch/csrc/api/include")
+target_include_directories(Prism PRIVATE ${TORCH_INCLUDE_DIRS})
+
+# Link LibTorch
+# target_link_libraries(MyJUCEProject PRIVATE Torch::Torch)
+target_link_libraries(Prism PRIVATE ${TORCH_LIBRARIES})
+set_property(TARGET Prism PROPERTY CXX_STANDARD 17)
+
 
 # `target_link_libraries` links libraries and JUCE modules to other libraries or executables. Here,
 # we're linking our executable target to the `juce::juce_audio_utils` module. Inter-module

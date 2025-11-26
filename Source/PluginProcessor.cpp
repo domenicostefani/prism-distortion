@@ -40,12 +40,15 @@ MBDistProcessor::MBDistProcessor()
             // do nothing
         }
     }
+#else
+    
 #endif
 }
 
 MBDistProcessor::~MBDistProcessor()
 {
     
+#ifdef OSC
     for (auto& param : this->getParameters())
     {
         // try static cast to AudioParameterWithID
@@ -59,6 +62,7 @@ MBDistProcessor::~MBDistProcessor()
             // do nothing
         }
     }
+#endif
 }
 
 #ifdef OSC
@@ -110,6 +114,14 @@ juce::AudioProcessorValueTreeState::ParameterLayout MBDistProcessor::createLayou
             4.0f
         ));
     }
+
+    // Volume
+    params.push_back(std::make_unique<juce::AudioParameterFloat>(
+        "OutputVolume",
+        "Output Volume",
+        juce::NormalisableRange<float>(0.0f, 1.0f, 0.01f),
+        1.0f
+    ));
 
     return { params.begin(), params.end() };
 }
@@ -177,10 +189,9 @@ void MBDistProcessor::changeProgramName (int /*index*/, const juce::String& /*ne
 }
 
 //==============================================================================
-void MBDistProcessor::prepareToPlay (double /*sampleRate*/, int /*samplesPerBlock*/)
+void MBDistProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
-    // Use this method as the place to do any pre-playback
-    // initialisation that you need..
+#ifdef OSC
     for (auto& param : this->getParameters())
     {
         // try static cast to AudioParameterWithID
@@ -196,6 +207,11 @@ void MBDistProcessor::prepareToPlay (double /*sampleRate*/, int /*samplesPerBloc
             // do nothing
         }
     }
+#else
+    this->sampleRate = sampleRate;
+    inferenceEngine.prepareToPlay(samplesPerBlock);
+    monoBuffer.setSize(1, samplesPerBlock);
+#endif
 }
 
 void MBDistProcessor::releaseResources()
@@ -230,13 +246,49 @@ bool MBDistProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
 }
 #endif
 
+void MBDistProcessor::refreshLatents()
+{
+    for (int i = 0; i < NUM_BANDS; ++i)
+    {
+        std::atomic<float>* bandParam = apvts.getRawParameterValue("Band" + std::to_string(i + 1));
+        std::atomic<float>* gainParam = apvts.getRawParameterValue("Band" + std::to_string(i + 1) + "Gain");
+        std::atomic<float>* toneParam = apvts.getRawParameterValue("Band" + std::to_string(i + 1) + "Tone");
+
+        // latents[i]
+        latentDataFrame.getLatent((int)bandParam->load(),
+                                  (int)gainParam->load(),
+                                  (int)toneParam->load(),
+                                  latents[i]);
+
+    }
+}
+
 void MBDistProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& /*midiMessages*/)
 {
     juce::ScopedNoDenormals noDenormals;
     auto totalNumInputChannels  = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
 
-    buffer.clear();
+    bool bypass = false;
+    {
+        std::atomic<float>* bypassParam = apvts.getRawParameterValue("Bypass");
+        float bypassValue = bypassParam->load();
+        bypass = (bypassValue >= 0.5f);
+    }
+    // buffer.clear();
+    if (!bypass) {
+        
+        inferenceEngine.runInference(buffer, monoBuffer);
+
+        // Copy monoBuffer channel 0 to all output channels
+        for (int channel = 0; channel < totalNumOutputChannels; ++channel) {
+            auto* writePtr = buffer.getWritePointer(channel);
+            auto* readPtr = monoBuffer.getReadPointer(0);
+            std::memcpy(writePtr, readPtr, buffer.getNumSamples() * sizeof(float));
+        }
+
+        buffer.applyGain(0.5f); // TODO: remove hardcoded gain
+    }
 }
 
 //==============================================================================

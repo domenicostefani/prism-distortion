@@ -9,16 +9,18 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include "inference.h"
+#include "VAEdataframe.h"
 
 #define NUM_BANDS 8
-#define OSC 
+// #define OSC 
 
 //==============================================================================
 /**
 */
-class MBDistProcessor  : public juce::AudioProcessor, 
+class MBDistProcessor  : public juce::AudioProcessor
                         #ifdef OSC
-                            AudioProcessorValueTreeState::Listener
+                         ,   AudioProcessorValueTreeState::Listener
                         #endif
 {
 public:
@@ -71,8 +73,16 @@ public:
     int oscPortOut = 9000;
     // Osc Sender
     std::unique_ptr<juce::OSCSender> oscSender;
+#else
+    InferenceEngine inferenceEngine;
+    std::array<std::array<float, 8>, NUM_BANDS> latents;
+    void refreshLatents();
+    VAELatentDataFrame latentDataFrame;
 #endif
 
+    std::atomic<double> sampleRate { 44100.0 };
+    // Mono buffer
+    juce::AudioBuffer<float> monoBuffer;
 
 private:
     //==============================================================================
