@@ -37,52 +37,10 @@ private:
     juce::ComponentBoundsConstrainer constrainer;
 
     const int ORIGIN_WIDTH = 794;
-    const int ORIGIN_HEIGHT = 447;	
+    const int ORIGIN_HEIGHT = 455;
     const float ASPECT_RATIO = (float)ORIGIN_WIDTH/ORIGIN_HEIGHT;
 
     MBDistLaF _MBDistLaF;
-
-    // Linear sliders
-    // juce::Slider osc2mix_sld{ "osc2mix_sld"},
-    //              noise_sld{ "noise_sld"},
-    //              vcfFreq_sld{ "vcfFreq_sld"},
-    //              vcfRes_sld{ "vcfRes_sld"},
-    //              glideMode_sld{ "glideMode_sld"},
-    //              vcfEnv_sld{ "vcfEnv_sld"},
-    //              vcfVel_sld{ "vcfVel_sld"},
-    //              glideRate_sld{ "glideRate_sld"},
-    //              glideBend_sld{ "glideBend_sld"},
-    //              lfoRate_sld{ "lfoRate_sld"},
-    //              lfoAmt_sld{ "lfoAmt_sld"},
-    //              vibratoAmt_sld{ "vibratoAmt_sld"},
-    //              vcfEnvA_sld{ "vcfEnvA_sld"},
-    //              vcfEnvD_sld{ "vcfEnvD_sld"},
-    //              vcfEnvS_sld{ "vcfEnvS_sld"},
-    //              vcfEnvR_sld{ "vcfEnvR_sld"},
-    //              ampEnvA_sld{ "ampEnvA_sld"},
-    //              ampEnvD_sld{ "ampEnvD_sld"},
-    //              ampEnvS_sld{ "ampEnvS_sld"},
-    //              ampEnvR_sld{ "ampEnvR_sld"};
-    // std::unique_ptr<SliderAttachment> driveAttachment,
-    //                                   depthAttachment,
-    //                                   srAttachment,
-    //                                   mixAttachment,
-    //                                   glideModeAttachment,
-    //                                   vcfEnvAttachment,
-    //                                   vcfVelAttachment,
-    //                                   glideRateAttachment,
-    //                                   glideBendAttachment,
-    //                                   lfoRateAttachment,
-    //                                   lfoAmtAttachment,
-    //                                   vibratoAmtAttachment,
-    //                                   vcfEnvAAttachment,
-    //                                   vcfEnvDAttachment,
-    //                                   vcfEnvSAttachment,
-    //                                   vcfEnvRAttachment,
-    //                                   ampEnvAAttachment,
-    //                                   ampEnvDAttachment,
-    //                                   ampEnvSAttachment,
-    //                                   ampEnvRAttachment;
 
     std::array<std::pair<std::string,std::string>,8> bandFrequencies = {{
         {"40", "500"},
@@ -131,7 +89,7 @@ private:
                                       osc2fineAttachment,
                                       tuningAttachment;
 
-    juce::TextButton bypassButton{ "bypassButton"};
+    juce::TextButton bypassButton{ "bypassButton"}, websiteButton{ "websiteButton"};
     std::unique_ptr<ButtonAttachment> bypassAttachment;
     bool bypass = false;
 

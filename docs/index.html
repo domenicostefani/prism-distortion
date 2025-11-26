@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Multiband Neural Distortion Audio Plugin">
+  <meta name="keywords" content="neural audio effects, deep learning, distortion, overdrive, fuzz, audio plugin">
+  <meta name="author" content="Ardan Dal Rì, Domenico Stefani">
+
+  <title>Prism: Multiband Neural Distortion</title>
+  
+  <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    
+    .hero-section {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2rem 0;
+    }
+    
+    .feature-card {
+      transition: transform 0.3s ease;
+      height: 100%;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .tech-badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      margin: 0.25rem;
+      background: #667eea;
+      color: white;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+    
+    .plugin-screenshot {
+      border-radius: .7rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      max-width: 100%;
+      height: auto;
+    }
+    
+    @media screen and (max-width: 768px) {
+      .hero-section {
+        padding: 2rem 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  
+  <!-- Hero Section -->
+  <div class="hero-section text-center">
+    <div class="container">
+      <div class="mb-1" style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+          <img src="logo.svg" alt="Prism Logo" class="logo" style="width: 4rem;">
+          <h1 class="display-3 font-weight-bold mb-3">Prism</h1>
+      </div>
+      <p class="lead mb-4">Multiband Neural Distortion</p>
+      <p style="font-size: 1.2em; margin-bottom: 1.5rem;">
+        <a href="https://github.com/return-nihil" style="color: white;">Ardan Dal Rì</a> & 
+        <a href="http://www.domenicostefani.com" style="color: white;">Domenico Stefani</a>
+      </p>
+      <div class="mt-4">
+        <a class="btn btn-light btn-lg mx-2 mb-2" href="#features">Features</a>
+        <!-- <a class="btn btn-outline-light btn-lg mx-2 mb-2" href="#technology">Technology</a> -->
+        <a class="btn btn-outline-light btn-lg mx-2 mb-2" href="#demos">Demos</a>
+        <a class="btn btn-outline-light btn-lg mx-2 mb-2" href="#download">Download</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container mt-5 mb-5" style="max-width: 1200px;">
+    
+    <!-- Introduction -->
+    <div class="section mb-5">
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-4">
+          <a href="plugin.png" class="card feature-card"><img src="plugin.png" alt="Prism Plugin Interface" class="plugin-screenshot"></a>
+        </div>
+        <div class="col-md-6">
+          <h2 class="mb-4">Multiband Neural Distortion</h2>
+          <p class="text-justify">
+            Prism is a multiband distortion audio effect that uses a single neural network to apply separate distortion effects (overdrive, fuzz, distortion) to different frequency bands of your audio signal.
+          </p>
+          <p class="text-justify">
+            Unlike traditional multiband processors, Prism's neural network learns a single complex transfer function with sophisticated band behaviors, receiving per-band conditioning on effect type, gain, and tone settings.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- <hr class="my-5"> -->
+
+    <!-- Features Section -->
+    <div id="features" class="section mb-5">
+      <h2 class="text-center mb-5">Key Features</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card feature-card">
+            <div class="card-body text-center">
+              <h3 class="h4 mb-3">Multiband Processing</h3>
+              <p>Prism offers control over 8 frequency bands, and users can select separate effect types, gain and tone settings for each</p>
+              <p>Available effects are overdrive, fuzz, and distortion.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card feature-card">
+            <div class="card-body text-center">
+              <h3 class="h4 mb-3">Neural Network Core</h3>
+              <p>At the core of Prism is a modeling temporal convolution neural network. The three effects are modeled after analog boutique pedals. The overdrive is modeled after a certain royalty member of the overdrive world. The fuzz models a red pedal which in turn was inspired by the famous muff. The distortion effect models a rebel purple IC distortion pedal.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card feature-card">
+            <div class="card-body text-center">
+              <h3 class="h4 mb-3">Graphical User Interface</h3>
+              <p>Prism comes with a GUI inspired by multiband eq pedals. At the moment, the GUI is a simple interface that sends OSC messages to an underlying Python runtime that performs the modeling, but we plan on integrating inference into the gui and compile it as a plugin.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- -->
+
+    <!-- <hr class="my-5">
+
+    <div id="technology" class="section mb-5">
+      <h2 class="text-center mb-4">Technology</h2>
+      <div class="text-center mb-4">
+        <span class="tech-badge">JUCE Framework</span>
+        <span class="tech-badge">Neural Networks</span>
+        <span class="tech-badge">OSC Protocol</span>
+        <span class="tech-badge">Python Backend</span>
+        <span class="tech-badge">Real-time Processing</span>
+      </div>
+      <p class="text-justify px-md-5">
+        Prism features a JUCE-based graphical user interface that provides intuitive control over the multiband processing. The current architecture uses OSC (Open Sound Control) to communicate between the plugin frontend and a Python backend, where the neural network processing occurs. This design allows for rapid prototyping and experimentation with different neural architectures.
+      </p>
+      <p class="text-justify px-md-5">
+        The neural network model is conditioned on effect type, gain, and tone parameters for each frequency band, enabling it to generate a wide variety of distortion characteristics from a single learned transfer function.
+      </p>
+    </div>
+ -->
+    <hr class="my-5">
+
+ 
+    <div id="demos" class="section mb-5">
+      <h2 class="text-center mb-4">Demos</h2>
+
+      <p class="text-justify px-md-5">
+        This section is under construction. Please check back later for audio demos showcasing Prism's capabilities.
+      </p>
+
+    <hr class="my-5">
+
+    <div id="download" class="section mb-5">
+      <h2 class="text-center mb-4">Get Prism</h2>
+      <div class="text-center">
+        <p class="lead mb-4">Prism is currently in development. Check out the GitHub repositories for the latest updates.</p>
+        <a href="https://github.com/return-nihil/Prism" class="btn btn-primary btn-lg mb-2">Neural Net Repository</a>
+        <p class="mt-1 text-muted">
+          <small><a href="https://github.com/return-nihil/Prism">www.github.com/return-nihil/Prism</a></small><br>
+        </p>
+        <a href="https://www.github.com/domenicostefani/prism-distortion/" class="btn btn-secondary btn-lg mb-2">GUI Repository</a>
+        <p class="mt-1 text-muted">
+          <small><a href="https://www.github.com/domenicostefani/prism-distortion/">www.github.com/domenicostefani/prism-distortion</a></small>
+        </p>
+      </div>
+    </div>
+
+    <!-- <hr class="my-5"> -->
+
+    <!-- Related Work -->
+    <!-- <div class="section mb-5">
+      <h2 class="text-center mb-4">Related Research</h2>
+      <p class="text-center px-md-5">
+        Prism builds upon techniques developed in our research on neural audio effect modeling. 
+        For more information on the underlying neural architectures and training methodologies, 
+        check out our work on <a href="#">Morphdrive</a>.
+      </p>
+    </div> -->
+
+    <!-- Footer -->
+    <hr>
+    <footer class="text-center py-4">
+      <p>
+        © 2025 <a href="https://github.com/return-nihil">Ardan Dal Rì</a> (return_nihil) & 
+        <a href="http://domenicostefani.com">Domenico Stefani</a> (OnyxDSP)
+      </p>
+    </footer>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

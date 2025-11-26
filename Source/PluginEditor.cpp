@@ -18,7 +18,7 @@ MBDistEditor::MBDistEditor (MBDistProcessor& p)
     // editor's size to whatever you need it to be.
     setSize (ORIGIN_WIDTH, ORIGIN_HEIGHT);
 
-    // setResizable(true, true);
+    setResizable(true, true);
 
     
     constrainer.setFixedAspectRatio(ASPECT_RATIO);
@@ -52,6 +52,14 @@ MBDistEditor::MBDistEditor (MBDistProcessor& p)
     bypassButton.setLookAndFeel(&invisibleButtonLaF);
     bypassAttachment = std::make_unique<ButtonAttachment>(audioProcessor.apvts, "Bypass", bypassButton);
     bypassButton.setClickingTogglesState(true);
+
+    //websiteButton
+    addAndMakeVisible(websiteButton);
+    websiteButton.setLookAndFeel(&invisibleButtonLaF);
+    websiteButton.onClick = []() {
+        juce::URL url("https://www.github.com/domenicostefani/prism-plugin");
+        url.launchInDefaultBrowser();
+    };
 
     for (int i = 0; i < bandSliders.size(); ++i)
     {
@@ -127,6 +135,23 @@ void MBDistEditor::paint (juce::Graphics& g)
     g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));
 
     auto area = getLocalBounds();
+    // Calculate scale factors
+    float scaleX = area.getWidth() / (float)ORIGIN_WIDTH;
+    float scaleY = area.getHeight() / (float)ORIGIN_HEIGHT;
+    
+    // Use the smaller scale factor to maintain aspect ratio
+    float scale = juce::jmin(scaleX, scaleY);
+    
+    // Center the scaled content
+    float scaledWidth = ORIGIN_WIDTH * scale;
+    float scaledHeight = ORIGIN_HEIGHT * scale;
+    float xOffset = (area.getWidth() - scaledWidth) * 0.5f;
+    float yOffset = (area.getHeight() - scaledHeight) * 0.5f;
+
+    // Create and apply transform
+    juce::AffineTransform transform = juce::AffineTransform::scale(scale)
+                                        .translated(xOffset, yOffset);
+
     background_jpg_drawable->drawWithin(
         g, 
         area.toFloat(), 
@@ -144,8 +169,12 @@ void MBDistEditor::paint (juce::Graphics& g)
     );
 
     // juce::Colour ledColour = bypass ? juce::Colour::fromString("#ff3c3c3c") : juce::Colour::fromString("#ffcb7bdd");
-    const int lexX = 440, ledY = 320;
-    juce::Rectangle<int> ledArea(lexX, ledY, 18, 18);
+    int lexX = 440, ledY = 320;
+    // affine transform for led
+    transform.transformPoint(lexX, ledY);
+    int ledW = 18, ledH = 18;
+    transform.transformPoint(ledW, ledH);
+    juce::Rectangle<int> ledArea(lexX, ledY, ledW, ledH);
     // g.setColour(ledColour);
     // g.fillEllipse(lexX, ledY, 15, 15);
     // g.setColour(juce::Colours::black);
@@ -192,7 +221,16 @@ void MBDistEditor::paint (juce::Graphics& g)
 
         juce::Rectangle<int> gainToneArea(gainKnobX, gainKnobY, jmax(GAIN_KNOB_SIZE, toneKnobSize), (toneKnobY + toneKnobSize) - gainKnobY);
         auto expGainToneArea = gainToneArea.expanded(margin, margin).toFloat();
-        g.fillRoundedRectangle(expGainToneArea, margin/2.0f);
+
+        int gt_x = expGainToneArea.getX();;
+        int gt_y = expGainToneArea.getY();
+        int gt_w = expGainToneArea.getWidth();
+        int gt_h = expGainToneArea.getHeight();
+        transform.transformPoints(gt_x, gt_y, gt_w, gt_h);
+        auto transformedExpGainToneArea = juce::Rectangle<float>(gt_x, gt_y, gt_w, gt_h);
+        int cmargin = margin, cmargin2 = margin;
+        transform.transformPoint(cmargin, cmargin2);
+        g.fillRoundedRectangle(transformedExpGainToneArea, cmargin/2.0f);
 
         bandGainSliders[i].setBounds(juce::Rectangle<int>(gainKnobX, gainKnobY, GAIN_KNOB_SIZE, GAIN_KNOB_SIZE));
         gainKnobX += offsetX;
@@ -200,29 +238,46 @@ void MBDistEditor::paint (juce::Graphics& g)
         bandToneSliders[i].setBounds(juce::Rectangle<int>(toneKnobX, toneKnobY, toneKnobSize, toneKnobSize));
         toneKnobX += offsetX;
         
-        g.fillRoundedRectangle(expGainToneArea.getX(),
-                               bandY - margin,
-                               expGainToneArea.getWidth(),
-                               BAND_HEIGHT + 2 * margin,
-                               margin/2.0f);
+        int bandRR_x = expGainToneArea.getX();
+        int bandRR_y = bandY - margin;
+        int bandRR_w = expGainToneArea.getWidth();
+        int bandRR_h = BAND_HEIGHT + 2 * margin;
+        transform.transformPoints(bandRR_x, bandRR_y, bandRR_w, bandRR_h);
+        auto transformedBandRRArea = juce::Rectangle<float>(bandRR_x, bandRR_y, bandRR_w, bandRR_h);
+        g.fillRoundedRectangle(transformedBandRRArea, cmargin/2.0f);
+
         bandSliders[i].setBounds(juce::Rectangle<int>(bandX, bandY, BAND_WIDTH, BAND_HEIGHT));
 
         int TEXT_HEIGHT = 15;
+        transform.transformPoint(TEXT_HEIGHT, cmargin2);// cmargin2 reused, not used later
+
         g.setColour(juce::Colours::black);
         g.setFont(_MBDistLaF.mainFont.withHeight(TEXT_HEIGHT));
+
+        int bandText_x = bandX - 40,
+            bandText_y = textY+10,
+            bandText_w = BAND_WIDTH + 20,
+            bandText_h = TEXT_HEIGHT;
+        transform.transformPoints(bandText_x, bandText_y, bandText_w, bandText_h);
+
         g.drawText(bandFrequencies[i].first,
-                   bandX - 40,
-                   textY+10,
-                   BAND_WIDTH + 20,
-                   15,
+                   bandText_x,
+                   bandText_y,
+                   bandText_w,
+                   bandText_h,
                    juce::Justification::left);
         if (i == bandSliders.size() -1)
         {
+            int bandend_x = bandX - 10,
+                bandend_textY = textY + 10,
+                bandend_w = BAND_WIDTH + 30,
+                bandend_h = TEXT_HEIGHT;
+            transform.transformPoints(bandend_x, bandend_textY, bandend_w, bandend_h);
             g.drawText(bandFrequencies[i].second,
-                   bandX + 10,
-                   textY + 10,
-                   BAND_WIDTH + 30,
-                   15,
+                   bandend_x,
+                   bandend_textY,
+                   bandend_w,
+                   bandend_h,
                    juce::Justification::right);
         }
 
@@ -232,22 +287,12 @@ void MBDistEditor::paint (juce::Graphics& g)
     const int buttonX = 383, buttonY = 340, buttonW = 55, buttonH = 55;
     bypassButton.setBounds(juce::Rectangle<int>(buttonX, buttonY, buttonW, buttonH));
 
-    // Calculate scale factors
-    float scaleX = area.getWidth() / (float)ORIGIN_WIDTH;
-    float scaleY = area.getHeight() / (float)ORIGIN_HEIGHT;
+    //76	341	179	53
+    const int webX = 76, webY = 341, webW = 179, webH = 53;
+    websiteButton.setBounds(juce::Rectangle<int>(webX, webY, webW, webH));
+
     
-    // Use the smaller scale factor to maintain aspect ratio
-    float scale = juce::jmin(scaleX, scaleY);
     
-    // Center the scaled content
-    float scaledWidth = ORIGIN_WIDTH * scale;
-    float scaledHeight = ORIGIN_HEIGHT * scale;
-    float xOffset = (area.getWidth() - scaledWidth) * 0.5f;
-    float yOffset = (area.getHeight() - scaledHeight) * 0.5f;
-    
-    // Create and apply transform
-    juce::AffineTransform transform = juce::AffineTransform::scale(scale)
-                                        .translated(xOffset, yOffset);
 
     // Apply the transform to components
     for (int i = 0; i < bandSliders.size(); ++i)
@@ -256,6 +301,8 @@ void MBDistEditor::paint (juce::Graphics& g)
         bandGainSliders[i].setTransform(transform);
         bandToneSliders[i].setTransform(transform);
     }
+    bypassButton.setTransform(transform);
+    websiteButton.setTransform(transform);
 }
 
 void MBDistEditor::resized()
