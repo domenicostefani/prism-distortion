@@ -91,7 +91,6 @@ juce::AudioProcessorValueTreeState::ParameterLayout MBDistProcessor::createLayou
 
     for(int i=0; i<NUM_BANDS; ++i)
     {
-        const int BAND_OPTIONS = 3; // Distortion, Gain, Tone
         params.push_back(std::make_unique<juce::AudioParameterChoice>(
             "Band" + std::to_string(i + 1),
             "Band " + std::to_string(i + 1) + " Effect",
@@ -208,7 +207,7 @@ void MBDistProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
         }
     }
 #else
-    this->sampleRate = sampleRate;
+    this->_sampleRate = sampleRate;
     inferenceEngine.prepareToPlay(samplesPerBlock);
     monoBuffer.setSize(1, samplesPerBlock);
 #endif
@@ -266,7 +265,6 @@ void MBDistProcessor::refreshLatents()
 void MBDistProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& /*midiMessages*/)
 {
     juce::ScopedNoDenormals noDenormals;
-    auto totalNumInputChannels  = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
 
     bool bypass = false;
@@ -303,14 +301,14 @@ juce::AudioProcessorEditor* MBDistProcessor::createEditor()
 }
 
 //==============================================================================
-void MBDistProcessor::getStateInformation (juce::MemoryBlock& destData)
+void MBDistProcessor::getStateInformation (juce::MemoryBlock& /*destData*/)
 {
     // You should use this method to store your parameters in the memory block.
     // You could do that either as raw data, or use the XML or ValueTree classes
     // as intermediaries to make it easy to save and load complex data.
 }
 
-void MBDistProcessor::setStateInformation (const void* data, int sizeInBytes)
+void MBDistProcessor::setStateInformation (const void* /*data*/, int /*sizeInBytes*/)
 {
     // You should use this method to restore your parameters from this memory block,
     // whose contents will have been created by the getStateInformation() call.

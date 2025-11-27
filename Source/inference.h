@@ -4,6 +4,8 @@
 #include <torch/torch.h>
 #include <torch/script.h>
 
+// #define LOAD_FROM_PATH = "Source/Data/PRISM_traced_model_8bands.pth" // Only for debugging locally, load model pth from file path
+
 class InferenceEngine {
 public:
     InferenceEngine() {
@@ -17,6 +19,7 @@ public:
             logger->writeToLog("Using CPU");
         }
 
+#ifdef LOAD_FROM_PATH
         // Check if file exists
         std::ifstream f(model_path.c_str());
         if (!f.good()) {
@@ -45,6 +48,20 @@ public:
             std::cerr << e.what() << std::endl;
             throw e;
         }
+#else
+        // Load model from binary data (BinaryData::PRISM_traced_model_8bands_pth, BinaryData::PRISM_traced_model_8bands_pthSize)
+        // Need std::istream from memory buffer
+        std::istringstream model_stream(std::string(reinterpret_cast<const char*>(BinaryData::PRISM_traced_model_8bands_pth), BinaryData::PRISM_traced_model_8bands_pthSize));
+        try {
+            model = torch::jit::load(model_stream);
+        } catch (const c10::Error& e) {
+            logger->writeToLog("Error loading model from binary data as TorchScript.");
+            logger->writeToLog("Note: The .pth file needs to be converted to TorchScript format.");
+            logger->writeToLog("Use torch.jit.script() or torch.jit.trace() in Python.");
+            std::cerr << e.what() << std::endl;
+            throw e;
+        }
+#endif
 
         try {
             model.to(device);
@@ -101,7 +118,7 @@ public:
         // Run the model
         output = model.forward(inputs);
 
-        auto output_tuple = output.toTuple(); // TODO: understand type and move to members
+        output_tuple = output.toTuple(); // TODO: understand type and move to members
         output_tensor = output_tuple->elements()[0].toTensor();
         // std::cout << "Output shape: " << output_tensor.sizes() << std::endl;
         // if (output_tuple->elements().size() > 1) {
@@ -126,13 +143,13 @@ private:
     
 
     torch::jit::IValue output; // output of model.forward(inputs);
-    torch::jit::IValue output_tuple;  // output_tuple
+    c10::intrusive_ptr<c10::ivalue::Tuple> output_tuple;
     torch::Tensor returned_state;      // first element of output_tuple
     torch::Tensor output_tensor;      // second element of output_tuple
 
     int blockSize = 1024;
     const int N_BANDS = 8;
-    const std::string model_path = "C:/Users/cimil/Develop/paper-ideas/Ardan-JAES-25/Prism/PER_DOME/traced_model_8bands.pth"; // TODO: Load from binary
+    const std::string model_path = "C:/Users/cimil/Develop/paper-ideas/Ardan-JAES-25/MultibandDistortion/Source/Data/PRISM_traced_model_8bands.pth"; // TODO: Load from binary
     
     torch::Device device{torch::kCPU};
     // Juce Logger

@@ -222,10 +222,10 @@ void MBDistEditor::paint (juce::Graphics& g)
         juce::Rectangle<int> gainToneArea(gainKnobX, gainKnobY, jmax(GAIN_KNOB_SIZE, toneKnobSize), (toneKnobY + toneKnobSize) - gainKnobY);
         auto expGainToneArea = gainToneArea.expanded(margin, margin).toFloat();
 
-        int gt_x = expGainToneArea.getX();;
-        int gt_y = expGainToneArea.getY();
-        int gt_w = expGainToneArea.getWidth();
-        int gt_h = expGainToneArea.getHeight();
+        float gt_x = static_cast<float>(expGainToneArea.getX());
+        float gt_y = static_cast<float>(expGainToneArea.getY());
+        float gt_w = static_cast<float>(expGainToneArea.getWidth());
+        float gt_h = static_cast<float>(expGainToneArea.getHeight());
         transform.transformPoints(gt_x, gt_y, gt_w, gt_h);
         auto transformedExpGainToneArea = juce::Rectangle<float>(gt_x, gt_y, gt_w, gt_h);
         int cmargin = margin, cmargin2 = margin;
@@ -238,10 +238,10 @@ void MBDistEditor::paint (juce::Graphics& g)
         bandToneSliders[i].setBounds(juce::Rectangle<int>(toneKnobX, toneKnobY, toneKnobSize, toneKnobSize));
         toneKnobX += offsetX;
         
-        int bandRR_x = expGainToneArea.getX();
-        int bandRR_y = bandY - margin;
-        int bandRR_w = expGainToneArea.getWidth();
-        int bandRR_h = BAND_HEIGHT + 2 * margin;
+        float bandRR_x = expGainToneArea.getX();
+        float bandRR_y = static_cast<float>(bandY - margin);
+        float bandRR_w = expGainToneArea.getWidth();
+        float bandRR_h = static_cast<float>(BAND_HEIGHT + 2 * margin);
         transform.transformPoints(bandRR_x, bandRR_y, bandRR_w, bandRR_h);
         auto transformedBandRRArea = juce::Rectangle<float>(bandRR_x, bandRR_y, bandRR_w, bandRR_h);
         g.fillRoundedRectangle(transformedBandRRArea, cmargin/2.0f);
@@ -252,12 +252,12 @@ void MBDistEditor::paint (juce::Graphics& g)
         transform.transformPoint(TEXT_HEIGHT, cmargin2);// cmargin2 reused, not used later
 
         g.setColour(juce::Colours::black);
-        g.setFont(_MBDistLaF.mainFont.withHeight(TEXT_HEIGHT));
+        g.setFont(_MBDistLaF.mainFont.withHeight(static_cast<float>(TEXT_HEIGHT)));
 
         int bandText_x = bandX - 40,
-            bandText_y = textY+10,
-            bandText_w = BAND_WIDTH + 20,
-            bandText_h = TEXT_HEIGHT;
+              bandText_y = textY+10,
+              bandText_w = BAND_WIDTH + 20,
+              bandText_h = TEXT_HEIGHT;
         transform.transformPoints(bandText_x, bandText_y, bandText_w, bandText_h);
 
         g.drawText(bandFrequencies[i].first,
@@ -295,7 +295,7 @@ void MBDistEditor::paint (juce::Graphics& g)
 #ifndef OSC
     // If not using OSC, we are using the neural network.
     // Print a biig warning if sample rate is not 48000 Hz
-    if (this->sampleRate != 48000.0)
+    if (this->_sampleRate != 48000.0)
     {
         g.setFont(_MBDistLaF.mainFont.withHeight(20.0f));
         juce::String warningText = "Warning: Sample rate is not 48kHz!";
@@ -349,7 +349,7 @@ void MBDistEditor::timerCallback()
     
     bypass = (bypassValue >= 0.5f);
 
-    this->sampleRate = audioProcessor.sampleRate.load();
+    this->_sampleRate = audioProcessor._sampleRate.load();
 
     repaint();
 }

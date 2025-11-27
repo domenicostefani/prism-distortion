@@ -80,7 +80,7 @@ public:
     VAELatentDataFrame latentDataFrame;
 #endif
 
-    std::atomic<double> sampleRate { 44100.0 };
+    std::atomic<double> _sampleRate { 44100.0 };
     // Mono buffer
     juce::AudioBuffer<float> monoBuffer;
 

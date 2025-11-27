@@ -137,6 +137,7 @@ juce_add_binary_data(AudioPluginData SOURCES
     Source/Data/background.jpg
     Source/Data/led-on.png
     Source/Data/led-off.png
+    Source/Data/PRISM_traced_model_8bands.pth
     )
 
 if (APPLE)
