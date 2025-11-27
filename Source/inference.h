@@ -134,6 +134,16 @@ public:
         std::memcpy(writePtr, output_tensor.data_ptr(), blockSize * sizeof(float));
     }
 
+    void setConditioning(const std::array<std::array<float, LATENT_SIZE>, NUM_BANDS>& latents) {
+        // Copy latents data to conditioning tensor
+        float* condDataPtr = conditioning.data_ptr<float>();
+        for (size_t i = 0; i < N_BANDS; ++i) {  // TODO: Ardan è giusto? Blocchi ti 8 latent float da 8
+            for (size_t j = 0; j < LATENT_SIZE; ++j) {
+                condDataPtr[i * LATENT_SIZE + j] = latents[i][j];
+            }
+        }
+    }
+
 private:
     torch::jit::script::Module model;
     std::vector<torch::jit::IValue> inputs;

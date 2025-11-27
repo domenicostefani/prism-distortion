@@ -43,6 +43,9 @@ MBDistProcessor::MBDistProcessor()
 #else
     
 #endif
+
+    createPrograms();
+    smoothedGain.reset (44100.0, 0.02); // sampleRate, smoothingTimeInSeconds
 }
 
 MBDistProcessor::~MBDistProcessor()
@@ -165,21 +168,35 @@ double MBDistProcessor::getTailLengthSeconds() const
 
 int MBDistProcessor::getNumPrograms()
 {
-    return 1;   // NB: some hosts don't cope very well if you tell them there are 0 programs,
-                // so this should be at least 1, even if you're not really implementing programs.
+    return int(_programs.size());
 }
 
 int MBDistProcessor::getCurrentProgram()
 {
-    return 0;
+    return _currentProgram;
 }
 
-void MBDistProcessor::setCurrentProgram (int /*index*/)
+void MBDistProcessor::setCurrentProgram (int index)
 {
+    _currentProgram = index;
+
+    // Update parameters according to the selected program
+    const PrismProgram& program = _programs[index];
+    for (int i = 0; i < NUM_BANDS; ++i)
+    {
+        apvts.getParameter("Band" + std::to_string(i + 1))->setValueNotifyingHost(program.effectTypes[i]/(float)(bandEffects.size() - 1));
+        apvts.getParameter("Band" + std::to_string(i + 1) + "Gain")->setValueNotifyingHost(program.gains[i]/10.0f);
+        apvts.getParameter("Band" + std::to_string(i + 1) + "Tone")->setValueNotifyingHost(program.tones[i]/10.0f);
+    }
+    apvts.getParameter("OutputVolume")->setValueNotifyingHost(program.outputVolume);
+
 }
 
-const juce::String MBDistProcessor::getProgramName (int /*index*/)
+const juce::String MBDistProcessor::getProgramName (int index)
 {
+    if (index >= 0 && index < getNumPrograms()) {
+        return juce::String(_programs[index].name);
+    }
     return {};
 }
 
@@ -211,6 +228,7 @@ void MBDistProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
     inferenceEngine.prepareToPlay(samplesPerBlock);
     monoBuffer.setSize(1, samplesPerBlock);
 #endif
+    smoothedGain.reset (sampleRate, 0.02); // sampleRate, smoothingTimeInSeconds
 }
 
 void MBDistProcessor::releaseResources()
@@ -260,12 +278,16 @@ void MBDistProcessor::refreshLatents()
                                   latents[i]);
 
     }
+    inferenceEngine.setConditioning(latents);
 }
 
 void MBDistProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& /*midiMessages*/)
 {
     juce::ScopedNoDenormals noDenormals;
     auto totalNumOutputChannels = getTotalNumOutputChannels();
+
+    targetGain = *apvts.getRawParameterValue ("OutputVolume"); // 0.0–1.0
+    smoothedGain.setTargetValue (targetGain);
 
     bool bypass = false;
     {
@@ -278,6 +300,14 @@ void MBDistProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::Midi
         
         inferenceEngine.runInference(buffer, monoBuffer);
 
+        { // Apply smoothed gain to monoBuffer (just first channel matters)
+            int ch = 0;
+            auto* data = monoBuffer.getWritePointer (ch);
+
+            for (int i = 0; i < monoBuffer.getNumSamples(); ++i)
+                data[i] *= smoothedGain.getNextValue();
+        }
+
         // Copy monoBuffer channel 0 to all output channels
         for (int channel = 0; channel < totalNumOutputChannels; ++channel) {
             auto* writePtr = buffer.getWritePointer(channel);
@@ -285,8 +315,8 @@ void MBDistProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::Midi
             std::memcpy(writePtr, readPtr, buffer.getNumSamples() * sizeof(float));
         }
 
-        buffer.applyGain(0.5f); // TODO: remove hardcoded gain
     }
+
 }
 
 //==============================================================================
@@ -320,3 +350,32 @@ juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter()
 {
     return new MBDistProcessor();
 }
+
+void MBDistProcessor::createPrograms()
+{
+    _programs.emplace_back("Init Program", 
+                           std::array<int, NUM_BANDS>{0,0,0,1,1,1,2,2}, // Effect types (0: Distortion, 1: Fuzz, 2: Overdrive)
+                           std::array<int, NUM_BANDS>{4,4,4,4,4,4,4,4}, // Gains (0,2,4,6,8,10)
+                           std::array<int, NUM_BANDS>{4,4,4,4,4,4,4,4}, // Tones (0,2,4,6,8,10)
+                           1.0f);
+    _programs.emplace_back("Heavy Distortion", 
+                           std::array<int, NUM_BANDS>{0,0,0,0,0,0,0,0}, // Effect types (0: Distortion, 1: Fuzz, 2: Overdrive
+                           std::array<int, NUM_BANDS>{10,10,10,10,10,10,10,10}, // Gains (0,2,4,6,8,10)
+                           std::array<int, NUM_BANDS>{2,2,2,2,2,2,2,2}, // Tones (0,2,4,6,8,10)
+                           0.8f);
+    _programs.emplace_back("Smooth Overdrive", 
+                           std::array<int, NUM_BANDS>{2,2,2,2,2,2,2,2}, // Effect types (0: Distortion, 1: Fuzz, 2: Overdrive
+                           std::array<int, NUM_BANDS>{4,4,4,4,4,4,4,4}, // Gains (0,2,4,6,8,10)
+                           std::array<int, NUM_BANDS>{6,6,6,6,6,6,6,6}, // Tones (0,2,4,6,8,10)
+                           1.0f);
+    _programs.emplace_back("Fuzzy Madness", 
+                           std::array<int, NUM_BANDS>{1,1,1,1,1,1,1,1}, // Effect types (0: Distortion, 1: Fuzz, 2: Overdrive
+                           std::array<int, NUM_BANDS>{8,8,8,8,8,8,8,8}, // Gains (0,2,4,6,8,10)
+                           std::array<int, NUM_BANDS>{0,0,0,0,0,0,0,0}, // Tones (0,2,4,6,8,10)
+                           0.9f);
+    _programs.emplace_back("Distortion Bass, Fuzz Highs", 
+                           std::array<int, NUM_BANDS>{0,0,1,1,1,1,1,1}, // Effect types (0: Distortion, 1: Fuzz, 2: Overdrive
+                           std::array<int, NUM_BANDS>{10,10,8,8,8,8,0,0}, // Gains (0,2,4,6,8,10)
+                           std::array<int, NUM_BANDS>{2,2,0,0,0,0,10,10}, // Tones (0,2,4,6,8,10)
+                           1.0f);
+};

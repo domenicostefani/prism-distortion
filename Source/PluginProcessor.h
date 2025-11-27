@@ -9,11 +9,56 @@
 #pragma once
 
 #include <JuceHeader.h>
-#include "inference.h"
 #include "VAEdataframe.h"
 
-#define NUM_BANDS 8
+#define NUM_BANDS 8   // Number of frequency bands
+#define LATENT_SIZE 8 // VAE Latent space size
+#include "inference.h"
+
 // #define OSC 
+
+
+// struct JX10Program
+// {
+//     JX10Program();
+//     JX10Program(const char *name,
+//                 float p0,  float p1,  float p2,  float p3,
+//                 float p4,  float p5,  float p6,  float p7,
+//                 float p8,  float p9,  float p10, float p11,
+//                 float p12, float p13, float p14, float p15,
+//                 float p16, float p17, float p18, float p19,
+//                 float p20, float p21, float p22, float p23);
+//     char name[24];
+//     float param[NPARAMS];
+// };
+
+struct PrismProgram
+{
+    PrismProgram() {
+        effectTypes.fill(0.0f);
+        gains.fill(0.0f);
+        tones.fill(0.0f);
+        outputVolume = 1.0f;
+
+        strcpy(name, "Empty Patch");
+    }
+    PrismProgram(const char *name,
+                 std::array<int, NUM_BANDS> effectTypes,
+                 std::array<int, NUM_BANDS> gains,
+                 std::array<int, NUM_BANDS> tones,
+                 float outputVolume) {                 
+        strcpy(this->name, name);
+        this->effectTypes = effectTypes;
+        this->gains = gains;
+        this->tones = tones;
+        this->outputVolume = outputVolume;
+    }
+    char name[24];
+    std::array<int, NUM_BANDS> effectTypes;
+    std::array<int, NUM_BANDS> gains;
+    std::array<int, NUM_BANDS> tones;
+    float outputVolume;
+};
 
 //==============================================================================
 /**
@@ -58,6 +103,9 @@ public:
     const juce::String getProgramName (int index) override;
     void changeProgramName (int index, const juce::String& newName) override;
 
+    void createPrograms();
+
+
     //==============================================================================
     void getStateInformation (juce::MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
@@ -83,6 +131,15 @@ public:
     std::atomic<double> _sampleRate { 44100.0 };
     // Mono buffer
     juce::AudioBuffer<float> monoBuffer;
+
+    std::vector<PrismProgram> _programs;
+    // Index of the active preset.
+    int _currentProgram = 0;
+
+    // Smoothed gain
+    juce::SmoothedValue<float> smoothedGain;
+    float targetGain = 1.0f;
+
 
 private:
     //==============================================================================

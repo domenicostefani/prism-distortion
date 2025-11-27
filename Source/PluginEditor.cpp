@@ -85,11 +85,23 @@ MBDistEditor::MBDistEditor (MBDistProcessor& p)
         bandToneAttachments[i] = std::make_unique<SliderAttachment>(audioProcessor.apvts, "Band" + std::to_string(i + 1) + "Tone", toneKnob);
     }
 
+    // Volume slider
+    addAndMakeVisible(volumeSlider);
+    volumeSlider.setSliderStyle(juce::Slider::LinearVertical);
+    volumeSlider.setTextBoxStyle(juce::Slider::NoTextBox, false, 0, 0);
+    volumeSlider.setLookAndFeel(&_MBDistLaF);
+    volumeAttachment = std::make_unique<SliderAttachment>(audioProcessor.apvts, "OutputVolume", volumeSlider);
 
-    // addAndMakeVisible(programButton);
-    // programButton.setButtonText("Program---");
-    // programButton.setLookAndFeel(&invisibleButtonLaF);
-    // programButton.onClick = [this]() { showFileMenu(&programButton); };
+    addAndMakeVisible(programButton);
+    programButton.setButtonText("Program---");
+    programButton.setLookAndFeel(&invisibleButtonLaF);
+    programButton.onClick = [this]() { showFileMenu(&programButton); };
+
+    addAndMakeVisible(currentProgram);
+    currentProgram.setFont(_MBDistLaF.mainFont);
+    currentProgram.setJustificationType(juce::Justification::centredLeft);
+    currentProgram.setColour(juce::Label::textColourId, juce::Colours::white);
+
 
     Timer::startTimerHz(25); // 25 Hz update rate for Program change to update label
 }
@@ -97,37 +109,14 @@ MBDistEditor::MBDistEditor (MBDistProcessor& p)
 
 MBDistEditor::~MBDistEditor()
 {
-    // Reset attachments
-    // driveAttachment.reset();
-    // depthAttachment.reset();
-    // srAttachment.reset();
-    // mixAttachment.reset();
-    // glideModeAttachment.reset();
-    // vcfEnvAttachment.reset();
-    // vcfVelAttachment.reset();
-    // glideRateAttachment.reset();
-    // glideBendAttachment.reset();
-    // lfoRateAttachment.reset();
-    // lfoAmtAttachment.reset();
-    // vibratoAmtAttachment.reset();
-    // vcfEnvAAttachment.reset();
-    // vcfEnvDAttachment.reset();
-    // vcfEnvSAttachment.reset();
-    // vcfEnvRAttachment.reset();
-    // ampEnvAAttachment.reset();
-    // ampEnvDAttachment.reset();
-    // ampEnvSAttachment.reset();
-    // ampEnvRAttachment.reset();
-    // octaveAttachment.reset();
-    // osc2tuneAttachment.reset();
-    // osc2fineAttachment.reset();
-    // tuningAttachment.reset();
     for (int i = 0; i < bandSliders.size(); ++i)
     {
         bandAttachments[i].reset();
         bandGainAttachments[i].reset();
         bandToneAttachments[i].reset();
     }
+    volumeAttachment.reset();
+    bypassAttachment.reset();
 }
 //==============================================================================
 void MBDistEditor::paint (juce::Graphics& g)
@@ -147,6 +136,8 @@ void MBDistEditor::paint (juce::Graphics& g)
     float scaledHeight = ORIGIN_HEIGHT * scale;
     float xOffset = (area.getWidth() - scaledWidth) * 0.5f;
     float yOffset = (area.getHeight() - scaledHeight) * 0.5f;
+
+    auto footerArea = area.removeFromBottom(static_cast<int>(FOOTER_HEIGHT * scale));
 
     // Create and apply transform
     juce::AffineTransform transform = juce::AffineTransform::scale(scale)
@@ -204,7 +195,7 @@ void MBDistEditor::paint (juce::Graphics& g)
     const int GAIN_KNOB_SIZE = 30;
 
     // first band slider at (197,161), all the other +71 x
-    int bandX = 200, bandY = 160, offsetX = 68;
+    int bandX = 200, bandY = 160, offsetX = 60;
     // First gain knob at (191, 63) size 31x31, offsetX = 71
     int gainKnobX = bandX - (GAIN_KNOB_SIZE-BAND_WIDTH)/2, 
         gainKnobY = 47;
@@ -213,7 +204,9 @@ void MBDistEditor::paint (juce::Graphics& g)
     int toneKnobX = gainKnobX, toneKnobY = 102, toneKnobSize = 31;
 
     int textY = bandY + BAND_HEIGHT + 10;
-    const int margin = 10;
+    const int margin = 7;
+    
+    int VOL_SLIDER_X = 0;
     for (int i = 0; i < bandSliders.size(); ++i)
     {
         // g.setColour(juce::Colour::fromString("#ffd1d1d1"));
@@ -282,7 +275,16 @@ void MBDistEditor::paint (juce::Graphics& g)
         }
 
         bandX += offsetX;
+        VOL_SLIDER_X = bandX;
     }
+
+    // Volume slider
+    const int VOL_SLIDER_W = BAND_WIDTH;
+    const int VOL_SLIDER_H = bandY- gainKnobY + BAND_HEIGHT;
+    const int VOL_SLIDER_Y = gainKnobY;
+    volumeSlider.setBounds(juce::Rectangle<int>(VOL_SLIDER_X, VOL_SLIDER_Y, VOL_SLIDER_W, VOL_SLIDER_H));
+
+    // Bypass button
 
     const int buttonX = 383, buttonY = 340, buttonW = 55, buttonH = 55;
     bypassButton.setBounds(juce::Rectangle<int>(buttonX, buttonY, buttonW, buttonH));
@@ -291,6 +293,22 @@ void MBDistEditor::paint (juce::Graphics& g)
     const int webX = 76, webY = 341, webW = 179, webH = 53;
     websiteButton.setBounds(juce::Rectangle<int>(webX, webY, webW, webH));
 
+    // Footer
+    g.setColour(juce::Colour::fromString("#ffffffff"));
+
+    auto programTextRect = footerArea.removeFromLeft(static_cast<int>(100 * scale));
+    g.drawText("Presets:", 
+               programTextRect.getX() + 10, 
+               programTextRect.getY() + 5, 
+               programTextRect.getWidth() - 20, 
+               programTextRect.getHeight() - 10, 
+               juce::Justification::centredRight);
+    auto currentProgramRect = footerArea.removeFromLeft(static_cast<int>(150 * scale));
+    currentProgram.setBounds(currentProgramRect);
+    programButton.setBounds(programTextRect.getX(),
+                            programTextRect.getY(),
+                            programTextRect.getWidth()+currentProgramRect.getWidth(),
+                            programTextRect.getHeight());
     
 #ifndef OSC
     // If not using OSC, we are using the neural network.
@@ -332,6 +350,9 @@ void MBDistEditor::resized()
 
 void MBDistEditor::timerCallback()
 {
+    auto programIndex = audioProcessor.getCurrentProgram();
+    auto programName = audioProcessor.getProgramName(programIndex);
+    currentProgram.setText(programName, juce::dontSendNotification);
     for (int i = 0; i < bandSliders.size(); ++i)
     {
         // Assign colors based on Band[1-8] parameter

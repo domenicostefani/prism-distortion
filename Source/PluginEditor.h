@@ -37,7 +37,9 @@ private:
     juce::ComponentBoundsConstrainer constrainer;
 
     const int ORIGIN_WIDTH = 794;
-    const int ORIGIN_HEIGHT = 455;
+
+    const int FOOTER_HEIGHT = 25;
+    const int ORIGIN_HEIGHT = 455 + FOOTER_HEIGHT;
     const float ASPECT_RATIO = (float)ORIGIN_WIDTH/ORIGIN_HEIGHT;
 
     MBDistLaF _MBDistLaF;
@@ -66,6 +68,9 @@ private:
     std::array<std::unique_ptr<SliderAttachment>, 8> bandGainAttachments;
     std::array<std::unique_ptr<SliderAttachment>, 8> bandToneAttachments;
 
+    juce::Slider volumeSlider;
+    std::unique_ptr<SliderAttachment> volumeAttachment;
+
     // Effect type colors:
     // Overdrive: #6696ed
     // Distortion: #ffd703
@@ -79,21 +84,12 @@ private:
 
     std::array<juce::Colour, 8> bandColors = {};
                                     
-    // Rotary sliders
-    juce::Slider octave_knob{ "octave_knob"},
-                 osc2tune_knob{ "osc2tune_knob"},
-                 osc2fine_knob{ "osc2fine_knob"},
-                 tuning_knob{ "tuning_knob"};
-    std::unique_ptr<SliderAttachment> octaveAttachment,
-                                      osc2tuneAttachment,
-                                      osc2fineAttachment,
-                                      tuningAttachment;
 
     juce::TextButton bypassButton{ "bypassButton"}, websiteButton{ "websiteButton"};
     std::unique_ptr<ButtonAttachment> bypassAttachment;
     bool bypass = false;
 
-    juce::Label currentProgram, sllinkStatus;
+    juce::Label currentProgram;
     juce::TextButton programButton;
     InvisibleTextButtonLookAndFeel invisibleButtonLaF;
 
