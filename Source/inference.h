@@ -51,7 +51,10 @@ public:
 #else
         // Load model from binary data (BinaryData::PRISM_traced_model_8bands_pth, BinaryData::PRISM_traced_model_8bands_pthSize)
         // Need std::istream from memory buffer
-        std::istringstream model_stream(std::string(reinterpret_cast<const char*>(BinaryData::PRISM_traced_model_8bands_pth), BinaryData::PRISM_traced_model_8bands_pthSize));
+        // V1
+        // std::istringstream model_stream(std::string(reinterpret_cast<const char*>(BinaryData::PRISM_traced_model_8bands_pth), BinaryData::PRISM_traced_model_8bands_pthSize));
+        // V2
+        std::istringstream model_stream(std::string(reinterpret_cast<const char*>(BinaryData::PRISM_V2_traced_model_8bands_pth), static_cast<size_t>(BinaryData::PRISM_V2_traced_model_8bands_pthSize)));
         try {
             model = torch::jit::load(model_stream);
         } catch (const c10::Error& e) {

@@ -1,4 +1,4 @@
-<REAPER_PROJECT 0.1 "7.42/win64" 1764262947
+<REAPER_PROJECT 0.1 "7.42/win64" 1764325154
   <NOTES 0 2
   >
   RIPPLE 0 0
@@ -32,15 +32,14 @@
   >
   <APPLYFX_CFG
   >
-  RENDER_FILE "C:\Users\cimil\Desktop\prism_out_v2_dist_fuzz_od.wav"
+  RENDER_FILE "C:\Users\cimil\Desktop\prism_out_v3_newmodel.wav"
   RENDER_FMT 0 1 48000
-  RENDER_1X 2
+  RENDER_1X 0
   RENDER_RANGE 1 0 0 0 0
   RENDER_RESAMPLE 3 0 1
   RENDER_ADDTOPROJ 0
   RENDER_STEMS 0
   RENDER_DITHER 0
-  RENDER_TRIM 0 0 0 0
   TIMELOCKMODE 1
   TEMPOENVLOCKMODE 1
   ITEMMIX 1
@@ -75,7 +74,7 @@
   MASTERTRACKVIEW 0 0.6667 0.5 0.5 0 0 0 0 0 0 0 0 0 0
   MASTERHWOUT 0 0 1 0 0 0 0 -1
   MASTER_NCH 2 2
-  MASTER_VOLUME 1.08695635014794 0 -1 -1 1
+  MASTER_VOLUME 1 0 -1 -1 1
   MASTER_PANMODE 3
   MASTER_PANLAWFLAGS 3
   MASTER_FX 1
@@ -118,7 +117,7 @@
     TRACKHEIGHT 0 0 0 0 0 0 0
     INQ 0 0 0 0.5 100 0 0 100
     NCHAN 2
-    FX 1
+    FX 0
     TRACKID {7C20665C-8EE7-4F79-A3B7-CAA8E40E7F49}
     PERF 0
     MIDIOUT -1
@@ -152,7 +151,7 @@
       IGUID {B4CC97CF-E2FA-48BD-85F4-34BD4CC5CDF3}
       IID 1
       NAME 531801__frankyfire__guitar-riff-heavy01-di.wav
-      VOLPAN 1 0 1 -1
+      VOLPAN 1.462177 0 1 -1
       SOFFS 0
       PLAYRATE 1 1 0 -1 0 0.0025
       CHANMODE 0
@@ -200,7 +199,7 @@
       IGUID {5A2F96CB-1F44-48BE-8DC0-F18B65FD5338}
       IID 2
       NAME prism_out_v1.wav
-      VOLPAN 1 0 1 -1
+      VOLPAN 1.462177 0 1 -1
       SOFFS 0
       PLAYRATE 1 1 0 -1 0 0.0025
       CHANMODE 0
@@ -248,13 +247,66 @@
       IGUID {7F2E0AC5-78EA-4672-B23E-647E236D7473}
       IID 3
       NAME prism_out_v2_dist_fuzz_od.wav
-      VOLPAN 1 0 1 -1
+      VOLPAN 1.462177 0 1 -1
       SOFFS 0
       PLAYRATE 1 1 0 -1 0 0.0025
       CHANMODE 0
       GUID {93B3C259-10EC-4FAD-83E8-2FE81ABEDAB4}
       <SOURCE WAVE
         FILE "C:\Users\cimil\Desktop\prism_out_v2_dist_fuzz_od.wav"
+      >
+    >
+  >
+  <TRACK {37AD6B2D-43F3-4A76-8D90-354E78758B39}
+    NAME prism_out_v3_newmodel
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 0 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    SEL 0
+    REC 0 0 1 0 0 0 0 0
+    VU 2
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {37AD6B2D-43F3-4A76-8D90-354E78758B39}
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+    <FXCHAIN
+      SHOW 0
+      LASTSEL 0
+      DOCKED 0
+    >
+    <ITEM
+      POSITION 0
+      SNAPOFFS 0
+      LENGTH 34.28570833333333
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0.01 0 1 0 0 0
+      FADEOUT 1 0.01 0 1 0 0 0
+      MUTE 0 0
+      SEL 1
+      IGUID {0A12A5C5-0A44-4331-9D6A-64C5BBABE849}
+      IID 4
+      NAME prism_out_v3_newmodel.wav
+      VOLPAN 1.462177 0 1 -1
+      SOFFS 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {30F86587-BF8D-4571-A064-15DB77A55E39}
+      <SOURCE WAVE
+        FILE "C:\Users\cimil\Desktop\prism_out_v3_newmodel.wav"
       >
     >
   >
