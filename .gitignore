@@ -1,3 +1,4 @@
 build/
 Builds/
 Latents/VAEdataframe.h
+.DS_Store

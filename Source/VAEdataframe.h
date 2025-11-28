@@ -23,7 +23,7 @@ public:
             latentOut.fill(0.0f);
             return;
         }
-        latentOut = data[effectType][gainIndex][toneIndex];
+        latentOut = data[static_cast<size_t>(effectType)][static_cast<size_t>(gainIndex)][static_cast<size_t>(toneIndex)];
     }
 
     VAELatentDataFrame() :

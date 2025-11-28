@@ -24,7 +24,8 @@
       "displayName": "USER Xcode Release",
       "inherits": "xcode-release",
       "cacheVariables": {
-        "JUCE_PATH": "/Users/domenico/Develop/JUCE"
+        "JUCE_PATH": "/Users/domenico/Develop/JUCE",
+        "Torch_DIR": "/Users/domenico/Develop/libtorch-macos-arm64-2.9.1/libtorch/share/cmake/Torch"
       }
     },
     {
@@ -32,7 +33,8 @@
       "displayName": "USER Xcode Debug",
       "inherits": "xcode-debug",
       "cacheVariables": {
-        "JUCE_PATH": "/Users/domenico/Develop/JUCE"
+        "JUCE_PATH": "/Users/domenico/Develop/JUCE",
+        "Torch_DIR": "/Users/domenico/Develop/libtorch-macos-arm64-2.9.1/libtorch/share/cmake/Torch"
       }
     }
   ],

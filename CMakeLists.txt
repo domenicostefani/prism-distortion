@@ -19,7 +19,7 @@ set(CMAKE_OSX_DEPLOYMENT_TARGET "13.0" CACHE STRING "Minimum OS X deployment ver
 project(Prism VERSION 0.0.1)
 
 # Find LibTorch
-set(Torch_DIR "D:/libtorch-win-shared-with-deps-2.9.1+cpu/libtorch/share/cmake/Torch")
+message(STATUS "Torch_DIR: ${Torch_DIR}")
 find_package(Torch REQUIRED)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${TORCH_CXX_FLAGS}")
 
