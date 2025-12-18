@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="nhY2Do" name="MultibandDistortion" projectType="audioplug"
-              useAppConfig="0" addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
-  <MAINGROUP id="UTv59N" name="MultibandDistortion">
+<JUCERPROJECT id="nhY2Do" name="Prism" projectType="audioplug" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" companyWebsite="www.domenicostefani.com/onyxdsp"
+              companyEmail="dom@domenicostefani.com" companyName="OnyxDSP"
+              companyCopyright="OnyxDSP">
+  <MAINGROUP id="UTv59N" name="Prism">
     <GROUP id="{E182CF72-82E5-0F83-ED90-4A4E256D8B5A}" name="Source">
       <FILE id="tydUVY" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
@@ -30,10 +32,10 @@
   </MODULES>
   <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
   <EXPORTFORMATS>
-    <VS2022 targetFolder="Builds/VisualStudio2022">
+    <VS2022 targetFolder="Build/VisualStudio2022">
       <CONFIGURATIONS>
-        <CONFIGURATION isDebug="1" name="Debug" targetName="MultibandDistortion"/>
-        <CONFIGURATION isDebug="0" name="Release" targetName="MultibandDistortion"/>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="Prism"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="Prism"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_audio_basics" path="../../../ONYX/onyx-saturo-plugin/JUCE/modules"/>
