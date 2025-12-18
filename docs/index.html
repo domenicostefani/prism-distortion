@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Multiband Neural Distortion Audio Plugin">
-  <meta name="keywords" content="neural audio effects, deep learning, distortion, overdrive, fuzz, audio plugin">
-  <meta name="author" content="Ardan Dal Rì, Domenico Stefani">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Multiband Neural Distortion Audio Plugin">
+    <meta name="keywords"
+      content="neural audio effects, deep learning, distortion, overdrive, fuzz, audio plugin">
+    <meta name="author" content="Ardan Dal Rì, Domenico Stefani">
 
-  <title>Prism: Multiband Neural Distortion</title>
-  
-  <link rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
-  
-  <style>
+    <title>Prism: Multiband Neural Distortion</title>
+
+    <link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous">
+
+    <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     }
@@ -59,87 +60,113 @@
       }
     }
   </style>
-</head>
+  </head>
 
-<body>
-  
-  <!-- Hero Section -->
-  <div class="hero-section text-center">
-    <div class="container">
-      <div class="mb-1" style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
-          <img src="logo.svg" alt="Prism Logo" class="logo" style="width: 4rem;">
+  <body>
+
+    <!-- Hero Section -->
+    <div class="hero-section text-center">
+      <div class="container">
+        <div class="mb-1"
+          style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+          <img src="logo.svg" alt="Prism Logo" class="logo"
+            style="width: 4rem;">
           <h1 class="display-3 font-weight-bold mb-3">Prism</h1>
-      </div>
-      <p class="lead mb-4">Multiband Neural Distortion</p>
-      <p style="font-size: 1.2em; margin-bottom: 1.5rem;">
-        <a href="https://github.com/return-nihil" style="color: white;">Ardan Dal Rì</a> & 
-        <a href="http://www.domenicostefani.com" style="color: white;">Domenico Stefani</a>
-      </p>
-      <div class="mt-4">
-        <a class="btn btn-light btn-lg mx-2 mb-2" href="#features">Features</a>
-        <!-- <a class="btn btn-outline-light btn-lg mx-2 mb-2" href="#technology">Technology</a> -->
-        <a class="btn btn-outline-light btn-lg mx-2 mb-2" href="#demos">Demos</a>
-        <a class="btn btn-outline-light btn-lg mx-2 mb-2" href="#download">Download</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Main Content -->
-  <div class="container mt-5 mb-5" style="max-width: 1200px;">
-    
-    <!-- Introduction -->
-    <div class="section mb-5">
-      <div class="row align-items-center">
-        <div class="col-md-6 mb-4">
-          <a href="plugin.png" class="card feature-card"><img src="plugin.png" alt="Prism Plugin Interface" class="plugin-screenshot"></a>
         </div>
-        <div class="col-md-6">
-          <h2 class="mb-4">Multiband Neural Distortion</h2>
-          <p class="text-justify">
-            Prism is a multiband distortion audio effect that uses a single neural network to apply separate distortion effects (overdrive, fuzz, distortion) to different frequency bands of your audio signal.
-          </p>
-          <p class="text-justify">
-            Unlike traditional multiband processors, Prism's neural network learns a single complex transfer function with sophisticated band behaviors, receiving per-band conditioning on effect type, gain, and tone settings.
-          </p>
+        <p class="lead mb-4">Multiband Neural Distortion</p>
+        <p style="font-size: 1.2em; margin-bottom: 1.5rem;">
+          <a href="https://github.com/return-nihil" style="color: white;">Ardan
+            Dal Rì</a> &
+          <a href="http://www.domenicostefani.com"
+            style="color: white;">Domenico Stefani</a>
+        </p>
+        <div class="mt-4">
+          <a class="btn btn-light btn-lg mx-2 mb-2"
+            href="#features">Features</a>
+          <!-- <a class="btn btn-outline-light btn-lg mx-2 mb-2" href="#technology">Technology</a> -->
+          <a class="btn btn-outline-light btn-lg mx-2 mb-2"
+            href="#demos">Demos</a>
+          <a class="btn btn-outline-light btn-lg mx-2 mb-2"
+            href="#download">Download</a>
         </div>
       </div>
     </div>
 
-    <!-- <hr class="my-5"> -->
+    <!-- Main Content -->
+    <div class="container mt-5 mb-5" style="max-width: 1200px;">
 
-    <!-- Features Section -->
-    <div id="features" class="section mb-5">
-      <h2 class="text-center mb-5">Key Features</h2>
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="card feature-card">
-            <div class="card-body text-center">
-              <h3 class="h4 mb-3">Multiband Processing</h3>
-              <p>Prism offers control over 8 frequency bands, and users can select separate effect types, gain and tone settings for each</p>
-              <p>Available effects are overdrive, fuzz, and distortion.</p>
-            </div>
+      <!-- Introduction -->
+      <div class="section mb-5">
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-4">
+            <a href="plugin.png" class="card feature-card"><img src="plugin.png"
+                alt="Prism Plugin Interface" class="plugin-screenshot"></a>
           </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card feature-card">
-            <div class="card-body text-center">
-              <h3 class="h4 mb-3">Neural Network Core</h3>
-              <p>At the core of Prism is a modeling temporal convolution neural network. The three effects are modeled after analog boutique pedals. The overdrive is modeled after a certain royalty member of the overdrive world. The fuzz models a red pedal which in turn was inspired by the famous muff. The distortion effect models a rebel purple IC distortion pedal.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card feature-card">
-            <div class="card-body text-center">
-              <h3 class="h4 mb-3">Graphical User Interface</h3>
-              <p>Prism comes with a GUI inspired by multiband eq pedals. At the moment, the GUI is a simple interface that sends OSC messages to an underlying Python runtime that performs the modeling, but we plan on integrating inference into the gui and compile it as a plugin.</p>
-            </div>
+          <div class="col-md-6">
+            <h2 class="mb-4">Multiband Neural Distortion</h2>
+            <p class="text-justify">
+              Prism is a multiband distortion audio effect that uses a single
+              neural network to apply separate distortion effects (overdrive,
+              fuzz, distortion) to different frequency bands of your audio
+              signal.
+            </p>
+            <p class="text-justify">
+              Unlike traditional multiband processors, Prism's neural network
+              learns a single complex transfer function with sophisticated band
+              behaviors, receiving per-band conditioning on effect type, gain,
+              and tone settings.
+            </p>
           </div>
         </div>
       </div>
-    </div> <!-- -->
 
-    <!-- <hr class="my-5">
+      <!-- <hr class="my-5"> -->
+
+      <!-- Features Section -->
+      <div id="features" class="section mb-5">
+        <h2 class="text-center mb-5">Key Features</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card feature-card">
+              <div class="card-body text-center">
+                <h3 class="h4 mb-3">Multiband Processing</h3>
+                <p>Prism offers control over 8 frequency bands, and users can
+                  select separate effect types, gain and tone settings for
+                  each</p>
+                <p>Available effects are overdrive, fuzz, and distortion.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card feature-card">
+              <div class="card-body text-center">
+                <h3 class="h4 mb-3">Neural Network Core</h3>
+                <p>At the core of Prism is a modeling temporal convolution
+                  neural network. The three effects are modeled after analog
+                  boutique pedals. The overdrive is modeled after a certain
+                  royalty member of the overdrive world. The fuzz models a red
+                  pedal which in turn was inspired by the famous muff. The
+                  distortion effect models a rebel purple IC distortion
+                  pedal.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card feature-card">
+              <div class="card-body text-center">
+                <h3 class="h4 mb-3">Graphical User Interface</h3>
+                <p>Prism comes with a GUI inspired by multiband eq pedals. At
+                  the moment, the GUI is a simple interface that sends OSC
+                  messages to an underlying Python runtime that performs the
+                  modeling, but we plan on integrating inference into the gui
+                  and compile it as a plugin.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- -->
+
+      <!-- <hr class="my-5">
 
     <div id="technology" class="section mb-5">
       <h2 class="text-center mb-4">Technology</h2>
@@ -158,40 +185,1099 @@
       </p>
     </div>
  -->
-    <hr class="my-5">
+      <hr class="my-5">
 
- 
-    <div id="demos" class="section mb-5">
-      <h2 class="text-center mb-4">Demos</h2>
+      <div id="demos" class="section mb-5">
+        <h2 class="text-center mb-4">Demos</h2>
 
-      <!-- <p class="text-justify px-md-5">
+        <!-- <p class="text-justify px-md-5">
         This section is under construction. Please check back later for audio demos showcasing Prism's capabilities.
       </p> -->
-      <div class="text-center mb-4">
-          <a class="text-center mb-4" href="demos/demos-multiband.html">All demos</a>
-      </div>
 
-    <hr class="my-5">
+        <table>
+          <tr>
+            <td class="align-middle"></td>
+            <td class="align-middle" colspan="2">
+              <table
+                class="progtab text-center table table-borderless align-middle"
+                style="width: 100%; table-layout: fixed;"><tr><td
+                    class="align-middle" style="width: auto;"><b>Frequency Bands:</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td
+                    class="align-middle left"
+                    style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#ec2215; color:#FFFFFF; width:100%"
+                        title="Fuzz">Fuzz</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#ec2215; color:#FFFFFF; width:100%"
+                        title="Fuzz">Fuzz</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#ec2215; color:#FFFFFF; width:100%"
+                        title="Fuzz">Fuzz</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#ec2215; color:#FFFFFF; width:100%"
+                        title="Fuzz">Fuzz</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#ec2215; color:#FFFFFF; width:100%"
+                        title="Fuzz">Fuzz</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#ec2215; color:#FFFFFF; width:100%"
+                        title="Fuzz">Fuzz</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#ec2215; color:#FFFFFF; width:100%"
+                        title="Fuzz">Fuzz</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#ec2215; color:#FFFFFF; width:100%"
+                        title="Fuzz">Fuzz</div>
+                    </div>
+                  </td></tr><tr><td class="align-middle left"
+                    style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Gain</td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 100.0%; color:#000;">G5/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 80.0%; color:#000;">G4/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 80.0%; color:#000;">G4/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 60.0%; color:#000;">G3/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 60.0%; color:#000;">G3/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 40.0%; color:#000;">G2/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 40.0%; color:#000;">G2/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 20.0%; color:#000;">G1/5</div>
+                    </div>
+                  </td></tr><tr><td class="align-middle left"
+                    style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Tone</td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 100.0%; color:#000;">T5/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 80.0%; color:#000;">T4/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 80.0%; color:#000;">T4/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 60.0%; color:#000;">T3/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 60.0%; color:#000;">T3/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 40.0%; color:#000;">T2/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 40.0%; color:#000;">T2/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 20.0%; color:#000;">T1/5</div>
+                    </div>
+                  </td></tr></table>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="align-middle">
+              <b>Dry:</b> <a href="demos\dry\amp\amp_bass.mp3">amp_bass.mp3</a><br>
+              <audio controls>
+                <source src="demos\dry\amp\amp_bass.mp3" type="audio/mp3">
+              </audio>
 
-    <div id="download" class="section mb-5">
-      <h2 class="text-center mb-4">Get Prism</h2>
-      <div class="text-center">
-        <p class="lead mb-4">Prism is currently in development. Check out the GitHub repositories for the latest updates.</p>
-        <a href="https://github.com/return-nihil/Prism" class="btn btn-primary btn-lg mb-2">Neural Net Repository</a>
-        <p class="mt-1 text-muted">
-          <small><a href="https://github.com/return-nihil/Prism">www.github.com/return-nihil/Prism</a></small><br>
-        </p>
-        <a href="https://www.github.com/domenicostefani/prism-distortion/" class="btn btn-secondary btn-lg mb-2">GUI Repository</a>
-        <p class="mt-1 text-muted">
-          <small><a href="https://www.github.com/domenicostefani/prism-distortion/">www.github.com/domenicostefani/prism-distortion</a></small>
-        </p>
-      </div>
-    </div>
 
-    <!-- <hr class="my-5"> -->
+            </td>
+            <td class="align-middle">
+              <b>Dry:</b> <a
+                href="demos\wet\amp\amp_bass_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3">amp_bass_wet</a><br>
+              <audio controls>
+                <source
+                  src="demos\wet\amp\amp_bass_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3"
+                  type="audio/mp3">
+              </audio>
+            </td>
+          </tr>
+          <tr><td style="padding-bottom: 3rem"></td></tr>
 
-    <!-- Related Work -->
-    <!-- <div class="section mb-5">
+          <tr>
+            <td class="align-middle"></td>
+            <td class="align-middle" colspan="2">
+              <table
+                class="progtab text-center table table-borderless align-middle"
+                style="width: 100%; table-layout: fixed;"><tr><td
+                    class="align-middle" style="width: auto;"><b></b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B1</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B2</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B3</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B4</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B5</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B6</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B7</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td
+                    class="align-middle left"
+                    style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#faeb32; color:#000000; width:100%"
+                        title="Dist">Dist</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#569bfd; color:#FFFFFF; width:100%"
+                        title="OD">OD</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#ec2215; color:#FFFFFF; width:100%"
+                        title="Fuzz">Fuzz</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#569bfd; color:#FFFFFF; width:100%"
+                        title="OD">OD</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#faeb32; color:#000000; width:100%"
+                        title="Dist">Dist</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#569bfd; color:#FFFFFF; width:100%"
+                        title="OD">OD</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#ec2215; color:#FFFFFF; width:100%"
+                        title="Fuzz">Fuzz</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#569bfd; color:#FFFFFF; width:100%"
+                        title="OD">OD</div>
+                    </div>
+                  </td></tr><tr><td class="align-middle left"
+                    style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Gain</td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 0.0%; color:#000;">G0/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 100.0%; color:#000;">G5/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 0.0%; color:#000;">G0/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 100.0%; color:#000;">G5/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 0.0%; color:#000;">G0/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 100.0%; color:#000;">G5/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 0.0%; color:#000;">G0/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 100.0%; color:#000;">G5/5</div>
+                    </div>
+                  </td></tr><tr><td class="align-middle left"
+                    style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Tone</td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 0.0%; color:#000;">T0/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 100.0%; color:#000;">T5/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 0.0%; color:#000;">T0/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 100.0%; color:#000;">T5/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 0.0%; color:#000;">T0/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 100.0%; color:#000;">T5/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 0.0%; color:#000;">T0/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 100.0%; color:#000;">T5/5</div>
+                    </div>
+                  </td></tr></table>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="align-middle">
+              <b>Dry:</b> <a
+                href="demos\dry\amp\amp_epiano.mp3">amp_epiano.mp3</a><br>
+              <audio controls>
+                <source src="demos\dry\amp\amp_epiano.mp3" type="audio/mp3">
+              </audio><br>
+
+            </td>
+            <td class="align-middle">
+              <b>Dry:</b> <a
+                href="demos\wet\amp\amp_epiano_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3">amp_epiano_wet</a><br>
+              <audio controls>
+                <source
+                  src="demos\wet\amp\amp_epiano_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3"
+                  type="audio/mp3">
+              </audio>
+            </td>
+          </tr>
+
+                    <tr><td style="padding-bottom: 3rem"></td></tr>
+
+
+
+
+          <tr>
+            <td class="align-middle"></td>
+            <td class="align-middle" colspan="2">
+              <table
+                class="progtab text-center table table-borderless align-middle"
+                style="width: 100%; table-layout: fixed;"><tr><td
+                    class="align-middle" style="width: auto;"><b></b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B1</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B2</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B3</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B4</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B5</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B6</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B7</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td
+                    class="align-middle left"
+                    style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#faeb32; color:#000000; width:100%"
+                        title="Dist">Dist</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#faeb32; color:#000000; width:100%"
+                        title="Dist">Dist</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#faeb32; color:#000000; width:100%"
+                        title="Dist">Dist</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#faeb32; color:#000000; width:100%"
+                        title="Dist">Dist</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#faeb32; color:#000000; width:100%"
+                        title="Dist">Dist</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#faeb32; color:#000000; width:100%"
+                        title="Dist">Dist</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#faeb32; color:#000000; width:100%"
+                        title="Dist">Dist</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#faeb32; color:#000000; width:100%"
+                        title="Dist">Dist</div>
+                    </div>
+                  </td></tr><tr><td class="align-middle left"
+                    style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Gain</td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 0.0%; color:#000;">G0/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 0.0%; color:#000;">G0/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 20.0%; color:#000;">G1/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 40.0%; color:#000;">G2/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 60.0%; color:#000;">G3/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 80.0%; color:#000;">G4/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 80.0%; color:#000;">G4/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 100.0%; color:#000;">G5/5</div>
+                    </div>
+                  </td></tr><tr><td class="align-middle left"
+                    style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Tone</td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 0.0%; color:#000;">T0/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 0.0%; color:#000;">T0/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 20.0%; color:#000;">T1/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 40.0%; color:#000;">T2/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 60.0%; color:#000;">T3/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 80.0%; color:#000;">T4/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 80.0%; color:#000;">T4/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 100.0%; color:#000;">T5/5</div>
+                    </div>
+                  </td></tr></table>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="align-middle">
+              <b>Dry:</b> <a
+                href="demos\dry\amp\amp_guitar-chords.mp3">amp_guitar-chords.mp3</a><br>
+              <audio controls>
+                <source src="demos\dry\amp\amp_guitar-chords.mp3" type="audio/mp3">
+              </audio>
+            </td>
+            <td class="align-middle">
+              <b>Dry:</b> <a
+                href="demos\wet\amp\amp_guitar-chords_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3">amp_guitar-chords_wet</a><br>
+              <audio controls>
+                <source
+                  src="demos\wet\amp\amp_guitar-chords_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3"
+                  type="audio/mp3">
+              </audio>
+            </td>
+          </tr>
+
+
+                    <tr><td style="padding-bottom: 3rem"></td></tr>
+
+
+          <tr>
+            <td class="align-middle"></td>
+            <td class="align-middle" colspan="2">
+              <table
+                class="progtab text-center table table-borderless align-middle"
+                style="width: 100%; table-layout: fixed;"><tr><td
+                    class="align-middle" style="width: auto;"><b></b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B1</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B2</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B3</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B4</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B5</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B6</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B7</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td
+                    class="align-middle left"
+                    style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#ec2215; color:#FFFFFF; width:100%"
+                        title="Fuzz">Fuzz</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#569bfd; color:#FFFFFF; width:100%"
+                        title="OD">OD</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#ec2215; color:#FFFFFF; width:100%"
+                        title="Fuzz">Fuzz</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#569bfd; color:#FFFFFF; width:100%"
+                        title="OD">OD</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#faeb32; color:#000000; width:100%"
+                        title="Dist">Dist</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#faeb32; color:#000000; width:100%"
+                        title="Dist">Dist</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#faeb32; color:#000000; width:100%"
+                        title="Dist">Dist</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#faeb32; color:#000000; width:100%"
+                        title="Dist">Dist</div>
+                    </div>
+                  </td></tr><tr><td class="align-middle left"
+                    style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Gain</td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 100.0%; color:#000;">G5/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 0.0%; color:#000;">G0/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 100.0%; color:#000;">G5/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 40.0%; color:#000;">G2/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 80.0%; color:#000;">G4/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 60.0%; color:#000;">G3/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 20.0%; color:#000;">G1/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 100.0%; color:#000;">G5/5</div>
+                    </div>
+                  </td></tr><tr><td class="align-middle left"
+                    style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Tone</td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 100.0%; color:#000;">T5/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 20.0%; color:#000;">T1/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 100.0%; color:#000;">T5/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 40.0%; color:#000;">T2/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 80.0%; color:#000;">T4/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 60.0%; color:#000;">T3/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 100.0%; color:#000;">T5/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 40.0%; color:#000;">T2/5</div>
+                    </div>
+                  </td></tr></table>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="align-middle">
+              <b>Dry:</b> <a
+                href="demos\dry\amp\amp_guitar-funk2.mp3">amp_guitar-funk2.mp3</a><br>
+              <audio controls>
+                <source src="demos\dry\amp\amp_guitar-funk2.mp3" type="audio/mp3">
+              </audio><br>
+
+
+
+
+
+
+
+
+
+
+
+
+            </td>
+            <td class="align-middle">
+              <b>Dry:</b> <a
+                href="demos\wet\amp\amp_guitar-funk2_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3">amp_guitar-funk2_wet</a><br>
+              <audio controls>
+                <source
+                  src="demos\wet\amp\amp_guitar-funk2_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3"
+                  type="audio/mp3">
+              </audio>
+            </td>
+          </tr>
+
+
+                    <tr><td style="padding-bottom: 3rem"></td></tr>
+
+
+          <tr>
+            <td class="align-middle"></td>
+            <td class="align-middle" colspan="2">
+              <table
+                class="progtab text-center table table-borderless align-middle"
+                style="width: 100%; table-layout: fixed;"><tr><td
+                    class="align-middle" style="width: auto;"><b></b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B1</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B2</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B3</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B4</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B5</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B6</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B7</b></td><td
+                    class="align-middle"
+                    style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td
+                    class="align-middle left"
+                    style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#569bfd; color:#FFFFFF; width:100%"
+                        title="OD">OD</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#faeb32; color:#000000; width:100%"
+                        title="Dist">Dist</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#569bfd; color:#FFFFFF; width:100%"
+                        title="OD">OD</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#ec2215; color:#FFFFFF; width:100%"
+                        title="Fuzz">Fuzz</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#569bfd; color:#FFFFFF; width:100%"
+                        title="OD">OD</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#faeb32; color:#000000; width:100%"
+                        title="Dist">Dist</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#569bfd; color:#FFFFFF; width:100%"
+                        title="OD">OD</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="type-selector">
+                      <div class="type-bar"
+                        style="background-color:#ec2215; color:#FFFFFF; width:100%"
+                        title="Fuzz">Fuzz</div>
+                    </div>
+                  </td></tr><tr><td class="align-middle left"
+                    style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Gain</td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 0.0%; color:#000;">G0/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 100.0%; color:#000;">G5/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 0.0%; color:#000;">G0/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 100.0%; color:#000;">G5/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 0.0%; color:#000;">G0/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 100.0%; color:#000;">G5/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 0.0%; color:#000;">G0/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle' style=" margin-bottom: 1rem;">
+                    <div class="progress" style="height: 1rem;">
+                      <div class="progress-bar bg-info"
+                        style="width: 100.0%; color:#000;">G5/5</div>
+                    </div>
+                  </td></tr><tr><td class="align-middle left"
+                    style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Tone</td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 0.0%; color:#000;">T0/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 100.0%; color:#000;">T5/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 0.0%; color:#000;">T0/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 100.0%; color:#000;">T5/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 0.0%; color:#000;">T0/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 100.0%; color:#000;">T5/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 0.0%; color:#000;">T0/5</div>
+                    </div>
+                  </td>
+                  <td class='align-middle'>
+                    <div class="progress" style="height: 15px;">
+                      <div class="progress-bar bg-warning"
+                        style="width: 100.0%; color:#000;">T5/5</div>
+                    </div>
+                  </td></tr></table>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="align-middle">
+              <b>Dry:</b> <a
+                href="demos\dry\amp\amp_guitar-funk.mp3">amp_guitar-funk.mp3</a><br>
+              <audio controls>
+                <source src="demos\dry\amp\amp_guitar-funk.mp3" type="audio/mp3">
+              </audio><br>
+
+
+
+
+
+
+
+
+
+
+
+
+            </td>
+            <td class="align-middle">
+              <b>Dry:</b> <a
+                href="demos\wet\amp\amp_guitar-funk_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3">amp_guitar-funk_wet</a><br>
+              <audio controls>
+                <source
+                  src="demos\wet\amp\amp_guitar-funk_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3"
+                  type="audio/mp3">
+              </audio>
+            </td>
+          </tr>
+
+        </table>
+
+        <!-- <div class="text-center mb-4">
+          <a class="text-center mb-4" href="demos/demos-multiband.html">All
+            demos</a>
+        </div> -->
+        <!-- Big centred butt -->
+          <div class="text-center mt-5">
+            <a href="demos/demos-multiband.html"
+              class="btn btn-info btn-lg mb-2">More Demos Here</a>
+          </div>
+
+        <hr class="my-5">
+
+        <div id="download" class="section mb-5">
+          <h2 class="text-center mb-4">Get Prism</h2>
+          <div class="text-center">
+            <p class="lead mb-4">Prism is currently in development. Check out
+              the GitHub repositories for the latest updates.</p>
+            <a href="https://github.com/return-nihil/Prism"
+              class="btn btn-primary btn-lg mb-2">Neural Net Repository</a>
+            <p class="mt-1 text-muted">
+              <small><a
+                  href="https://github.com/return-nihil/Prism">www.github.com/return-nihil/Prism</a></small><br>
+            </p>
+            <a href="https://www.github.com/domenicostefani/prism-distortion/"
+              class="btn btn-secondary btn-lg mb-2">GUI Repository</a>
+            <p class="mt-1 text-muted">
+              <small><a
+                  href="https://www.github.com/domenicostefani/prism-distortion/">www.github.com/domenicostefani/prism-distortion</a></small>
+            </p>
+          </div>
+        </div>
+
+        <!-- <hr class="my-5"> -->
+
+        <!-- Related Work -->
+        <!-- <div class="section mb-5">
       <h2 class="text-center mb-4">Related Research</h2>
       <p class="text-center px-md-5">
         Prism builds upon techniques developed in our research on neural audio effect modeling. 
@@ -200,25 +1286,28 @@
       </p>
     </div> -->
 
-    <!-- Footer -->
-    <hr>
-    <footer class="text-center py-4">
-      <p>
-        © 2025 <a href="https://github.com/return-nihil">Ardan Dal Rì</a> (return_nihil) & 
-        <a href="http://domenicostefani.com">Domenico Stefani</a> (OnyxDSP)
-      </p>
-    </footer>
-  </div>
+        <!-- Footer -->
+        <hr>
+        <footer class="text-center py-4">
+          <p>
+            © 2025 <a href="https://github.com/return-nihil">Ardan Dal Rì</a>
+            (return_nihil) &
+            <a href="http://domenicostefani.com">Domenico Stefani</a> (OnyxDSP)
+          </p>
+        </footer>
+      </div>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-    crossorigin="anonymous"></script>
-</body>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+      <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    </body>
 
-</html>
+  </html>

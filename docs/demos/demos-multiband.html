@@ -13,6 +13,13 @@
       crossorigin="anonymous">
 
     <style>
+    
+        .hero-section {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 2rem 0;
+        }
+
         .table-borderless td, .table-borderless th {
             border: none;
         }
@@ -59,10 +66,19 @@
 </head>
 
 <body>
-    <div class="text-center">
-        <div class="container"></div>
-        <h1 class="pt-5">Prism Demos</h1>
-        <a href="../index.html">Back to Home</a>        
+    <div class="hero-section text-center">
+      <div class="container">
+        <div class="mb-1"
+          style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+          <img src="../logo.svg" alt="Prism Logo" class="logo"
+            style="width: 4rem;">
+          <h1 class="display-3 font-weight-bold mb-3">All Prism demos</h1>
+        </div>
+        <p style="font-size: 1.2em; margin-bottom: 1.5rem;">
+          <a href="../index.html"
+            style="color: white;">Back to Homepage</a>
+        </p>
+      </div>
     </div>
 
     <div class="container mt-4" style="max-width: 1400px; margin-left: auto; margin-right: auto;">
@@ -88,7 +104,7 @@
     <tr>
         <td class="align-middle">1</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#ec2215; color:#FFFFFF; width:100%" title="Fuzz">Fuzz</div>
@@ -214,21 +230,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_bass.mp3">amp_bass.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_bass.mp3">amp_bass.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_bass.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\bass.mp3">bass.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\bass.mp3">bass.mp3</a><br>
             <audio controls>
                 <source src="dry\bass.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_bass_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3">amp_bass_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_bass_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3">amp_bass_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_bass_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\bass_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3">bass</a><br>
+            <b>Wet DI:</b> <a href="wet\bass_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3">bass</a><br>
             <audio controls>
                 <source src="wet\bass_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3" type="audio/mp3">
             </audio>
@@ -238,7 +254,7 @@
     <tr>
         <td class="align-middle">2</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#ec2215; color:#FFFFFF; width:100%" title="Fuzz">Fuzz</div>
@@ -364,21 +380,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_bass.mp3">amp_bass.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_bass.mp3">amp_bass.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_bass.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\bass.mp3">bass.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\bass.mp3">bass.mp3</a><br>
             <audio controls>
                 <source src="dry\bass.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_bass_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3">amp_bass_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_bass_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3">amp_bass_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_bass_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\bass_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3">bass</a><br>
+            <b>Wet DI:</b> <a href="wet\bass_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3">bass</a><br>
             <audio controls>
                 <source src="wet\bass_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3" type="audio/mp3">
             </audio>
@@ -388,7 +404,7 @@
     <tr>
         <td class="align-middle">3</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#ec2215; color:#FFFFFF; width:100%" title="Fuzz">Fuzz</div>
@@ -514,21 +530,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_bass.mp3">amp_bass.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_bass.mp3">amp_bass.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_bass.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\bass.mp3">bass.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\bass.mp3">bass.mp3</a><br>
             <audio controls>
                 <source src="dry\bass.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_bass_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3">amp_bass_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_bass_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3">amp_bass_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_bass_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\bass_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3">bass</a><br>
+            <b>Wet DI:</b> <a href="wet\bass_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3">bass</a><br>
             <audio controls>
                 <source src="wet\bass_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3" type="audio/mp3">
             </audio>
@@ -538,7 +554,7 @@
     <tr>
         <td class="align-middle">4</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#569bfd; color:#FFFFFF; width:100%" title="OD">OD</div>
@@ -664,21 +680,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_bass.mp3">amp_bass.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_bass.mp3">amp_bass.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_bass.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\bass.mp3">bass.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\bass.mp3">bass.mp3</a><br>
             <audio controls>
                 <source src="dry\bass.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_bass_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3">amp_bass_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_bass_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3">amp_bass_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_bass_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\bass_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3">bass</a><br>
+            <b>Wet DI:</b> <a href="wet\bass_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3">bass</a><br>
             <audio controls>
                 <source src="wet\bass_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3" type="audio/mp3">
             </audio>
@@ -688,7 +704,7 @@
     <tr>
         <td class="align-middle">5</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#faeb32; color:#000000; width:100%" title="Dist">Dist</div>
@@ -814,21 +830,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_bass.mp3">amp_bass.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_bass.mp3">amp_bass.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_bass.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\bass.mp3">bass.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\bass.mp3">bass.mp3</a><br>
             <audio controls>
                 <source src="dry\bass.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_bass_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3">amp_bass_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_bass_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3">amp_bass_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_bass_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\bass_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3">bass</a><br>
+            <b>Wet DI:</b> <a href="wet\bass_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3">bass</a><br>
             <audio controls>
                 <source src="wet\bass_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3" type="audio/mp3">
             </audio>
@@ -838,7 +854,7 @@
     <tr>
         <td class="align-middle">6</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#faeb32; color:#000000; width:100%" title="Dist">Dist</div>
@@ -964,21 +980,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_bass.mp3">amp_bass.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_bass.mp3">amp_bass.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_bass.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\bass.mp3">bass.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\bass.mp3">bass.mp3</a><br>
             <audio controls>
                 <source src="dry\bass.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_bass_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3">amp_bass_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_bass_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3">amp_bass_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_bass_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\bass_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3">bass</a><br>
+            <b>Wet DI:</b> <a href="wet\bass_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3">bass</a><br>
             <audio controls>
                 <source src="wet\bass_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3" type="audio/mp3">
             </audio>
@@ -993,7 +1009,7 @@
     <tr>
         <td class="align-middle">7</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#ec2215; color:#FFFFFF; width:100%" title="Fuzz">Fuzz</div>
@@ -1119,21 +1135,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_epiano.mp3">amp_epiano.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_epiano.mp3">amp_epiano.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_epiano.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\epiano.mp3">epiano.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\epiano.mp3">epiano.mp3</a><br>
             <audio controls>
                 <source src="dry\epiano.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_epiano_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3">amp_epiano_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_epiano_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3">amp_epiano_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_epiano_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\epiano_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3">epiano</a><br>
+            <b>Wet DI:</b> <a href="wet\epiano_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3">epiano</a><br>
             <audio controls>
                 <source src="wet\epiano_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3" type="audio/mp3">
             </audio>
@@ -1143,7 +1159,7 @@
     <tr>
         <td class="align-middle">8</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#ec2215; color:#FFFFFF; width:100%" title="Fuzz">Fuzz</div>
@@ -1269,21 +1285,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_epiano.mp3">amp_epiano.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_epiano.mp3">amp_epiano.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_epiano.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\epiano.mp3">epiano.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\epiano.mp3">epiano.mp3</a><br>
             <audio controls>
                 <source src="dry\epiano.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_epiano_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3">amp_epiano_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_epiano_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3">amp_epiano_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_epiano_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\epiano_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3">epiano</a><br>
+            <b>Wet DI:</b> <a href="wet\epiano_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3">epiano</a><br>
             <audio controls>
                 <source src="wet\epiano_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3" type="audio/mp3">
             </audio>
@@ -1293,7 +1309,7 @@
     <tr>
         <td class="align-middle">9</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#ec2215; color:#FFFFFF; width:100%" title="Fuzz">Fuzz</div>
@@ -1419,21 +1435,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_epiano.mp3">amp_epiano.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_epiano.mp3">amp_epiano.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_epiano.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\epiano.mp3">epiano.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\epiano.mp3">epiano.mp3</a><br>
             <audio controls>
                 <source src="dry\epiano.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_epiano_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3">amp_epiano_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_epiano_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3">amp_epiano_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_epiano_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\epiano_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3">epiano</a><br>
+            <b>Wet DI:</b> <a href="wet\epiano_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3">epiano</a><br>
             <audio controls>
                 <source src="wet\epiano_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3" type="audio/mp3">
             </audio>
@@ -1443,7 +1459,7 @@
     <tr>
         <td class="align-middle">10</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#569bfd; color:#FFFFFF; width:100%" title="OD">OD</div>
@@ -1569,21 +1585,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_epiano.mp3">amp_epiano.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_epiano.mp3">amp_epiano.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_epiano.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\epiano.mp3">epiano.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\epiano.mp3">epiano.mp3</a><br>
             <audio controls>
                 <source src="dry\epiano.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_epiano_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3">amp_epiano_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_epiano_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3">amp_epiano_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_epiano_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\epiano_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3">epiano</a><br>
+            <b>Wet DI:</b> <a href="wet\epiano_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3">epiano</a><br>
             <audio controls>
                 <source src="wet\epiano_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3" type="audio/mp3">
             </audio>
@@ -1593,7 +1609,7 @@
     <tr>
         <td class="align-middle">11</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#faeb32; color:#000000; width:100%" title="Dist">Dist</div>
@@ -1719,21 +1735,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_epiano.mp3">amp_epiano.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_epiano.mp3">amp_epiano.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_epiano.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\epiano.mp3">epiano.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\epiano.mp3">epiano.mp3</a><br>
             <audio controls>
                 <source src="dry\epiano.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_epiano_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3">amp_epiano_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_epiano_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3">amp_epiano_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_epiano_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\epiano_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3">epiano</a><br>
+            <b>Wet DI:</b> <a href="wet\epiano_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3">epiano</a><br>
             <audio controls>
                 <source src="wet\epiano_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3" type="audio/mp3">
             </audio>
@@ -1743,7 +1759,7 @@
     <tr>
         <td class="align-middle">12</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#faeb32; color:#000000; width:100%" title="Dist">Dist</div>
@@ -1869,21 +1885,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_epiano.mp3">amp_epiano.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_epiano.mp3">amp_epiano.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_epiano.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\epiano.mp3">epiano.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\epiano.mp3">epiano.mp3</a><br>
             <audio controls>
                 <source src="dry\epiano.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_epiano_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3">amp_epiano_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_epiano_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3">amp_epiano_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_epiano_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\epiano_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3">epiano</a><br>
+            <b>Wet DI:</b> <a href="wet\epiano_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3">epiano</a><br>
             <audio controls>
                 <source src="wet\epiano_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3" type="audio/mp3">
             </audio>
@@ -1898,7 +1914,7 @@
     <tr>
         <td class="align-middle">13</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#ec2215; color:#FFFFFF; width:100%" title="Fuzz">Fuzz</div>
@@ -2024,21 +2040,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_guitar-chords.mp3">amp_guitar-chords.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_guitar-chords.mp3">amp_guitar-chords.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_guitar-chords.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\guitar-chords.mp3">guitar-chords.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\guitar-chords.mp3">guitar-chords.mp3</a><br>
             <audio controls>
                 <source src="dry\guitar-chords.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_guitar-chords_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3">amp_guitar-chords_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_guitar-chords_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3">amp_guitar-chords_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_guitar-chords_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\guitar-chords_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3">guitar-chords</a><br>
+            <b>Wet DI:</b> <a href="wet\guitar-chords_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3">guitar-chords</a><br>
             <audio controls>
                 <source src="wet\guitar-chords_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3" type="audio/mp3">
             </audio>
@@ -2048,7 +2064,7 @@
     <tr>
         <td class="align-middle">14</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#ec2215; color:#FFFFFF; width:100%" title="Fuzz">Fuzz</div>
@@ -2174,21 +2190,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_guitar-chords.mp3">amp_guitar-chords.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_guitar-chords.mp3">amp_guitar-chords.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_guitar-chords.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\guitar-chords.mp3">guitar-chords.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\guitar-chords.mp3">guitar-chords.mp3</a><br>
             <audio controls>
                 <source src="dry\guitar-chords.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_guitar-chords_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3">amp_guitar-chords_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_guitar-chords_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3">amp_guitar-chords_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_guitar-chords_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\guitar-chords_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3">guitar-chords</a><br>
+            <b>Wet DI:</b> <a href="wet\guitar-chords_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3">guitar-chords</a><br>
             <audio controls>
                 <source src="wet\guitar-chords_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3" type="audio/mp3">
             </audio>
@@ -2198,7 +2214,7 @@
     <tr>
         <td class="align-middle">15</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#ec2215; color:#FFFFFF; width:100%" title="Fuzz">Fuzz</div>
@@ -2324,21 +2340,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_guitar-chords.mp3">amp_guitar-chords.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_guitar-chords.mp3">amp_guitar-chords.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_guitar-chords.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\guitar-chords.mp3">guitar-chords.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\guitar-chords.mp3">guitar-chords.mp3</a><br>
             <audio controls>
                 <source src="dry\guitar-chords.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_guitar-chords_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3">amp_guitar-chords_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_guitar-chords_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3">amp_guitar-chords_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_guitar-chords_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\guitar-chords_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3">guitar-chords</a><br>
+            <b>Wet DI:</b> <a href="wet\guitar-chords_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3">guitar-chords</a><br>
             <audio controls>
                 <source src="wet\guitar-chords_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3" type="audio/mp3">
             </audio>
@@ -2348,7 +2364,7 @@
     <tr>
         <td class="align-middle">16</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#569bfd; color:#FFFFFF; width:100%" title="OD">OD</div>
@@ -2474,21 +2490,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_guitar-chords.mp3">amp_guitar-chords.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_guitar-chords.mp3">amp_guitar-chords.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_guitar-chords.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\guitar-chords.mp3">guitar-chords.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\guitar-chords.mp3">guitar-chords.mp3</a><br>
             <audio controls>
                 <source src="dry\guitar-chords.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_guitar-chords_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3">amp_guitar-chords_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_guitar-chords_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3">amp_guitar-chords_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_guitar-chords_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\guitar-chords_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3">guitar-chords</a><br>
+            <b>Wet DI:</b> <a href="wet\guitar-chords_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3">guitar-chords</a><br>
             <audio controls>
                 <source src="wet\guitar-chords_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3" type="audio/mp3">
             </audio>
@@ -2498,7 +2514,7 @@
     <tr>
         <td class="align-middle">17</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#faeb32; color:#000000; width:100%" title="Dist">Dist</div>
@@ -2624,21 +2640,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_guitar-chords.mp3">amp_guitar-chords.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_guitar-chords.mp3">amp_guitar-chords.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_guitar-chords.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\guitar-chords.mp3">guitar-chords.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\guitar-chords.mp3">guitar-chords.mp3</a><br>
             <audio controls>
                 <source src="dry\guitar-chords.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_guitar-chords_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3">amp_guitar-chords_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_guitar-chords_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3">amp_guitar-chords_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_guitar-chords_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\guitar-chords_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3">guitar-chords</a><br>
+            <b>Wet DI:</b> <a href="wet\guitar-chords_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3">guitar-chords</a><br>
             <audio controls>
                 <source src="wet\guitar-chords_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3" type="audio/mp3">
             </audio>
@@ -2648,7 +2664,7 @@
     <tr>
         <td class="align-middle">18</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#faeb32; color:#000000; width:100%" title="Dist">Dist</div>
@@ -2774,21 +2790,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_guitar-chords.mp3">amp_guitar-chords.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_guitar-chords.mp3">amp_guitar-chords.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_guitar-chords.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\guitar-chords.mp3">guitar-chords.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\guitar-chords.mp3">guitar-chords.mp3</a><br>
             <audio controls>
                 <source src="dry\guitar-chords.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_guitar-chords_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3">amp_guitar-chords_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_guitar-chords_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3">amp_guitar-chords_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_guitar-chords_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\guitar-chords_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3">guitar-chords</a><br>
+            <b>Wet DI:</b> <a href="wet\guitar-chords_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3">guitar-chords</a><br>
             <audio controls>
                 <source src="wet\guitar-chords_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3" type="audio/mp3">
             </audio>
@@ -2803,7 +2819,7 @@
     <tr>
         <td class="align-middle">19</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#ec2215; color:#FFFFFF; width:100%" title="Fuzz">Fuzz</div>
@@ -2929,21 +2945,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_guitar-funk2.mp3">amp_guitar-funk2.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_guitar-funk2.mp3">amp_guitar-funk2.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_guitar-funk2.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\guitar-funk2.mp3">guitar-funk2.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\guitar-funk2.mp3">guitar-funk2.mp3</a><br>
             <audio controls>
                 <source src="dry\guitar-funk2.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_guitar-funk2_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3">amp_guitar-funk2_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_guitar-funk2_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3">amp_guitar-funk2_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_guitar-funk2_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\guitar-funk2_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3">guitar-funk2</a><br>
+            <b>Wet DI:</b> <a href="wet\guitar-funk2_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3">guitar-funk2</a><br>
             <audio controls>
                 <source src="wet\guitar-funk2_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3" type="audio/mp3">
             </audio>
@@ -2953,7 +2969,7 @@
     <tr>
         <td class="align-middle">20</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#ec2215; color:#FFFFFF; width:100%" title="Fuzz">Fuzz</div>
@@ -3079,21 +3095,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_guitar-funk2.mp3">amp_guitar-funk2.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_guitar-funk2.mp3">amp_guitar-funk2.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_guitar-funk2.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\guitar-funk2.mp3">guitar-funk2.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\guitar-funk2.mp3">guitar-funk2.mp3</a><br>
             <audio controls>
                 <source src="dry\guitar-funk2.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_guitar-funk2_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3">amp_guitar-funk2_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_guitar-funk2_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3">amp_guitar-funk2_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_guitar-funk2_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\guitar-funk2_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3">guitar-funk2</a><br>
+            <b>Wet DI:</b> <a href="wet\guitar-funk2_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3">guitar-funk2</a><br>
             <audio controls>
                 <source src="wet\guitar-funk2_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3" type="audio/mp3">
             </audio>
@@ -3103,7 +3119,7 @@
     <tr>
         <td class="align-middle">21</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#ec2215; color:#FFFFFF; width:100%" title="Fuzz">Fuzz</div>
@@ -3229,21 +3245,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_guitar-funk2.mp3">amp_guitar-funk2.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_guitar-funk2.mp3">amp_guitar-funk2.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_guitar-funk2.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\guitar-funk2.mp3">guitar-funk2.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\guitar-funk2.mp3">guitar-funk2.mp3</a><br>
             <audio controls>
                 <source src="dry\guitar-funk2.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_guitar-funk2_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3">amp_guitar-funk2_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_guitar-funk2_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3">amp_guitar-funk2_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_guitar-funk2_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\guitar-funk2_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3">guitar-funk2</a><br>
+            <b>Wet DI:</b> <a href="wet\guitar-funk2_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3">guitar-funk2</a><br>
             <audio controls>
                 <source src="wet\guitar-funk2_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3" type="audio/mp3">
             </audio>
@@ -3253,7 +3269,7 @@
     <tr>
         <td class="align-middle">22</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#569bfd; color:#FFFFFF; width:100%" title="OD">OD</div>
@@ -3379,21 +3395,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_guitar-funk2.mp3">amp_guitar-funk2.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_guitar-funk2.mp3">amp_guitar-funk2.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_guitar-funk2.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\guitar-funk2.mp3">guitar-funk2.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\guitar-funk2.mp3">guitar-funk2.mp3</a><br>
             <audio controls>
                 <source src="dry\guitar-funk2.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_guitar-funk2_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3">amp_guitar-funk2_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_guitar-funk2_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3">amp_guitar-funk2_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_guitar-funk2_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\guitar-funk2_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3">guitar-funk2</a><br>
+            <b>Wet DI:</b> <a href="wet\guitar-funk2_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3">guitar-funk2</a><br>
             <audio controls>
                 <source src="wet\guitar-funk2_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3" type="audio/mp3">
             </audio>
@@ -3403,7 +3419,7 @@
     <tr>
         <td class="align-middle">23</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#faeb32; color:#000000; width:100%" title="Dist">Dist</div>
@@ -3529,21 +3545,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_guitar-funk2.mp3">amp_guitar-funk2.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_guitar-funk2.mp3">amp_guitar-funk2.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_guitar-funk2.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\guitar-funk2.mp3">guitar-funk2.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\guitar-funk2.mp3">guitar-funk2.mp3</a><br>
             <audio controls>
                 <source src="dry\guitar-funk2.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_guitar-funk2_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3">amp_guitar-funk2_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_guitar-funk2_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3">amp_guitar-funk2_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_guitar-funk2_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\guitar-funk2_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3">guitar-funk2</a><br>
+            <b>Wet DI:</b> <a href="wet\guitar-funk2_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3">guitar-funk2</a><br>
             <audio controls>
                 <source src="wet\guitar-funk2_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3" type="audio/mp3">
             </audio>
@@ -3553,7 +3569,7 @@
     <tr>
         <td class="align-middle">24</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#faeb32; color:#000000; width:100%" title="Dist">Dist</div>
@@ -3679,21 +3695,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_guitar-funk2.mp3">amp_guitar-funk2.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_guitar-funk2.mp3">amp_guitar-funk2.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_guitar-funk2.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\guitar-funk2.mp3">guitar-funk2.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\guitar-funk2.mp3">guitar-funk2.mp3</a><br>
             <audio controls>
                 <source src="dry\guitar-funk2.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_guitar-funk2_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3">amp_guitar-funk2_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_guitar-funk2_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3">amp_guitar-funk2_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_guitar-funk2_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\guitar-funk2_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3">guitar-funk2</a><br>
+            <b>Wet DI:</b> <a href="wet\guitar-funk2_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3">guitar-funk2</a><br>
             <audio controls>
                 <source src="wet\guitar-funk2_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3" type="audio/mp3">
             </audio>
@@ -3708,7 +3724,7 @@
     <tr>
         <td class="align-middle">25</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#ec2215; color:#FFFFFF; width:100%" title="Fuzz">Fuzz</div>
@@ -3834,21 +3850,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_guitar-funk.mp3">amp_guitar-funk.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_guitar-funk.mp3">amp_guitar-funk.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_guitar-funk.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\guitar-funk.mp3">guitar-funk.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\guitar-funk.mp3">guitar-funk.mp3</a><br>
             <audio controls>
                 <source src="dry\guitar-funk.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_guitar-funk_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3">amp_guitar-funk_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_guitar-funk_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3">amp_guitar-funk_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_guitar-funk_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\guitar-funk_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3">guitar-funk</a><br>
+            <b>Wet DI:</b> <a href="wet\guitar-funk_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3">guitar-funk</a><br>
             <audio controls>
                 <source src="wet\guitar-funk_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3" type="audio/mp3">
             </audio>
@@ -3858,7 +3874,7 @@
     <tr>
         <td class="align-middle">26</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#ec2215; color:#FFFFFF; width:100%" title="Fuzz">Fuzz</div>
@@ -3984,21 +4000,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_guitar-funk.mp3">amp_guitar-funk.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_guitar-funk.mp3">amp_guitar-funk.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_guitar-funk.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\guitar-funk.mp3">guitar-funk.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\guitar-funk.mp3">guitar-funk.mp3</a><br>
             <audio controls>
                 <source src="dry\guitar-funk.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_guitar-funk_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3">amp_guitar-funk_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_guitar-funk_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3">amp_guitar-funk_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_guitar-funk_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\guitar-funk_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3">guitar-funk</a><br>
+            <b>Wet DI:</b> <a href="wet\guitar-funk_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3">guitar-funk</a><br>
             <audio controls>
                 <source src="wet\guitar-funk_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3" type="audio/mp3">
             </audio>
@@ -4008,7 +4024,7 @@
     <tr>
         <td class="align-middle">27</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#ec2215; color:#FFFFFF; width:100%" title="Fuzz">Fuzz</div>
@@ -4134,21 +4150,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_guitar-funk.mp3">amp_guitar-funk.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_guitar-funk.mp3">amp_guitar-funk.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_guitar-funk.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\guitar-funk.mp3">guitar-funk.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\guitar-funk.mp3">guitar-funk.mp3</a><br>
             <audio controls>
                 <source src="dry\guitar-funk.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_guitar-funk_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3">amp_guitar-funk_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_guitar-funk_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3">amp_guitar-funk_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_guitar-funk_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\guitar-funk_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3">guitar-funk</a><br>
+            <b>Wet DI:</b> <a href="wet\guitar-funk_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3">guitar-funk</a><br>
             <audio controls>
                 <source src="wet\guitar-funk_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3" type="audio/mp3">
             </audio>
@@ -4158,7 +4174,7 @@
     <tr>
         <td class="align-middle">28</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#569bfd; color:#FFFFFF; width:100%" title="OD">OD</div>
@@ -4284,21 +4300,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_guitar-funk.mp3">amp_guitar-funk.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_guitar-funk.mp3">amp_guitar-funk.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_guitar-funk.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\guitar-funk.mp3">guitar-funk.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\guitar-funk.mp3">guitar-funk.mp3</a><br>
             <audio controls>
                 <source src="dry\guitar-funk.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_guitar-funk_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3">amp_guitar-funk_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_guitar-funk_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3">amp_guitar-funk_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_guitar-funk_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\guitar-funk_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3">guitar-funk</a><br>
+            <b>Wet DI:</b> <a href="wet\guitar-funk_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3">guitar-funk</a><br>
             <audio controls>
                 <source src="wet\guitar-funk_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3" type="audio/mp3">
             </audio>
@@ -4308,7 +4324,7 @@
     <tr>
         <td class="align-middle">29</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#faeb32; color:#000000; width:100%" title="Dist">Dist</div>
@@ -4434,21 +4450,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_guitar-funk.mp3">amp_guitar-funk.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_guitar-funk.mp3">amp_guitar-funk.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_guitar-funk.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\guitar-funk.mp3">guitar-funk.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\guitar-funk.mp3">guitar-funk.mp3</a><br>
             <audio controls>
                 <source src="dry\guitar-funk.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_guitar-funk_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3">amp_guitar-funk_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_guitar-funk_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3">amp_guitar-funk_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_guitar-funk_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\guitar-funk_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3">guitar-funk</a><br>
+            <b>Wet DI:</b> <a href="wet\guitar-funk_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3">guitar-funk</a><br>
             <audio controls>
                 <source src="wet\guitar-funk_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3" type="audio/mp3">
             </audio>
@@ -4458,7 +4474,7 @@
     <tr>
         <td class="align-middle">30</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#faeb32; color:#000000; width:100%" title="Dist">Dist</div>
@@ -4584,21 +4600,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_guitar-funk.mp3">amp_guitar-funk.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_guitar-funk.mp3">amp_guitar-funk.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_guitar-funk.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\guitar-funk.mp3">guitar-funk.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\guitar-funk.mp3">guitar-funk.mp3</a><br>
             <audio controls>
                 <source src="dry\guitar-funk.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_guitar-funk_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3">amp_guitar-funk_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_guitar-funk_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3">amp_guitar-funk_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_guitar-funk_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\guitar-funk_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3">guitar-funk</a><br>
+            <b>Wet DI:</b> <a href="wet\guitar-funk_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3">guitar-funk</a><br>
             <audio controls>
                 <source src="wet\guitar-funk_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3" type="audio/mp3">
             </audio>
@@ -4613,7 +4629,7 @@
     <tr>
         <td class="align-middle">31</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#ec2215; color:#FFFFFF; width:100%" title="Fuzz">Fuzz</div>
@@ -4739,21 +4755,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_organ.mp3">amp_organ.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_organ.mp3">amp_organ.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_organ.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\organ.mp3">organ.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\organ.mp3">organ.mp3</a><br>
             <audio controls>
                 <source src="dry\organ.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_organ_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3">amp_organ_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_organ_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3">amp_organ_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_organ_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\organ_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3">organ</a><br>
+            <b>Wet DI:</b> <a href="wet\organ_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3">organ</a><br>
             <audio controls>
                 <source src="wet\organ_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3" type="audio/mp3">
             </audio>
@@ -4763,7 +4779,7 @@
     <tr>
         <td class="align-middle">32</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#ec2215; color:#FFFFFF; width:100%" title="Fuzz">Fuzz</div>
@@ -4889,21 +4905,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_organ.mp3">amp_organ.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_organ.mp3">amp_organ.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_organ.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\organ.mp3">organ.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\organ.mp3">organ.mp3</a><br>
             <audio controls>
                 <source src="dry\organ.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_organ_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3">amp_organ_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_organ_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3">amp_organ_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_organ_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\organ_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3">organ</a><br>
+            <b>Wet DI:</b> <a href="wet\organ_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3">organ</a><br>
             <audio controls>
                 <source src="wet\organ_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3" type="audio/mp3">
             </audio>
@@ -4913,7 +4929,7 @@
     <tr>
         <td class="align-middle">33</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#ec2215; color:#FFFFFF; width:100%" title="Fuzz">Fuzz</div>
@@ -5039,21 +5055,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_organ.mp3">amp_organ.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_organ.mp3">amp_organ.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_organ.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\organ.mp3">organ.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\organ.mp3">organ.mp3</a><br>
             <audio controls>
                 <source src="dry\organ.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_organ_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3">amp_organ_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_organ_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3">amp_organ_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_organ_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\organ_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3">organ</a><br>
+            <b>Wet DI:</b> <a href="wet\organ_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3">organ</a><br>
             <audio controls>
                 <source src="wet\organ_B0PfG5T5_B1PrG0T1_B2PfG5T5_B3PrG2T2_B4PkG1T2_B5PkG1T3_B6PkG1T4_B7PkG1T5.mp3" type="audio/mp3">
             </audio>
@@ -5063,7 +5079,7 @@
     <tr>
         <td class="align-middle">34</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#569bfd; color:#FFFFFF; width:100%" title="OD">OD</div>
@@ -5189,21 +5205,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_organ.mp3">amp_organ.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_organ.mp3">amp_organ.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_organ.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\organ.mp3">organ.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\organ.mp3">organ.mp3</a><br>
             <audio controls>
                 <source src="dry\organ.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_organ_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3">amp_organ_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_organ_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3">amp_organ_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_organ_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\organ_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3">organ</a><br>
+            <b>Wet DI:</b> <a href="wet\organ_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3">organ</a><br>
             <audio controls>
                 <source src="wet\organ_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3" type="audio/mp3">
             </audio>
@@ -5213,7 +5229,7 @@
     <tr>
         <td class="align-middle">35</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#faeb32; color:#000000; width:100%" title="Dist">Dist</div>
@@ -5339,21 +5355,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_organ.mp3">amp_organ.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_organ.mp3">amp_organ.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_organ.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\organ.mp3">organ.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\organ.mp3">organ.mp3</a><br>
             <audio controls>
                 <source src="dry\organ.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_organ_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3">amp_organ_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_organ_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3">amp_organ_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_organ_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\organ_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3">organ</a><br>
+            <b>Wet DI:</b> <a href="wet\organ_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3">organ</a><br>
             <audio controls>
                 <source src="wet\organ_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3" type="audio/mp3">
             </audio>
@@ -5363,7 +5379,7 @@
     <tr>
         <td class="align-middle">36</td>
         <td class="align-middle" colspan="2">
-            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><td class="align-middle" style="width: auto;"><b></b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
+            <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;"><tr><tr><td style="padding-bottom: 3rem"></td></tr><td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B1<br>(~40-500Hz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B2<br>(~0.5 - 1kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B3<br>(~1 - 1.6kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B4<br>(~1.6 - 2.7kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B5<br>(~2.7 - 4.5kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B6<br>(~4.5 - 7.4kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B7<br>(~7.4 - 12kHz)</b></td><td class="align-middle" style="font-size: 0.85em;"><b>B8<br>(~12 - 20kHz)</b></td></tr><tr><td class="align-middle left" style="font-size: 0.85em; font-weight: bold; white-space: nowrap;">Effect</td>
         <td class='align-middle'>
             <div class="type-selector">
                 <div class="type-bar" style="background-color:#faeb32; color:#000000; width:100%" title="Dist">Dist</div>
@@ -5489,21 +5505,21 @@
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="dry\amp\amp_organ.mp3">amp_organ.mp3</a><br>
+            <b>Dry+Amp:</b> <a href="dry\amp\amp_organ.mp3">amp_organ.mp3</a><br>
             <audio controls>
                 <source src="dry\amp\amp_organ.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="dry\organ.mp3">organ.mp3</a><br>
+            <b>Dry DI:</b> <a href="dry\organ.mp3">organ.mp3</a><br>
             <audio controls>
                 <source src="dry\organ.mp3" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="wet\amp\amp_organ_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3">amp_organ_wet</a><br>
+            <b>Wet+Amp:</b> <a href="wet\amp\amp_organ_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3">amp_organ_wet</a><br>
             <audio controls>
                 <source src="wet\amp\amp_organ_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="wet\organ_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3">organ</a><br>
+            <b>Wet DI:</b> <a href="wet\organ_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3">organ</a><br>
             <audio controls>
                 <source src="wet\organ_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3" type="audio/mp3">
             </audio>
@@ -5517,6 +5533,17 @@
             </div>
         </div>
     </div>
+
+    
+    <!-- Footer -->
+    <hr>
+    <footer class="text-center py-4">
+        <p>
+        © 2025 <a href="https://github.com/return-nihil">Ardan Dal Rì</a>
+        (return_nihil) &
+        <a href="http://domenicostefani.com">Domenico Stefani</a> (OnyxDSP)
+        </p>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>

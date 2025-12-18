@@ -58,11 +58,22 @@ def get_table_row(idx, dry_path, dry_amp_path, wet_path, wet_amp_path, band_sett
     # Build band settings HTML - 8 bands as columns
     bands_html = '<table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;">'
         
+    band_labels = [
+        "<b>B1<br>(~40-500Hz)</b>",
+        "<b>B2<br>(~0.5 - 1kHz)</b>",
+        "<b>B3<br>(~1 - 1.6kHz)</b>",
+        "<b>B4<br>(~1.6 - 2.7kHz)</b>",
+        "<b>B5<br>(~2.7 - 4.5kHz)</b>",
+        "<b>B6<br>(~4.5 - 7.4kHz)</b>",
+        "<b>B7<br>(~7.4 - 12kHz)</b>",
+        "<b>B8<br>(~12 - 20kHz)</b>",
+    ]
+
     # Band headers row
-    bands_html += '<tr>'
-    bands_html += f'<td class="align-middle" style="width: auto;"><b></b></td>'
+    bands_html += '<tr><tr><td style="padding-bottom: 3rem"></td></tr>'
+    bands_html += f'<td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td>'
     for band_idx in range(1, 9):
-        bands_html += f'<td class="align-middle" style="font-size: 0.85em;"><b>B{band_idx}</b></td>'
+        bands_html += f'<td class="align-middle" style="font-size: 0.85em;">{band_labels[band_idx-1]}</td>'
     bands_html += '</tr>'
 
     # Type selector row
@@ -126,21 +137,21 @@ def get_table_row(idx, dry_path, dry_amp_path, wet_path, wet_amp_path, band_sett
     <tr>
         <td></td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="{dry_amp_path}">{os.path.basename(dry_amp_path)}</a><br>
+            <b>Dry+Amp:</b> <a href="{dry_amp_path}">{os.path.basename(dry_amp_path)}</a><br>
             <audio controls>
                 <source src="{dry_amp_path}" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="{dry_path}">{os.path.basename(dry_path)}</a><br>
+            <b>Dry DI:</b> <a href="{dry_path}">{os.path.basename(dry_path)}</a><br>
             <audio controls>
                 <source src="{dry_path}" type="audio/mp3">
             </audio>
         </td>
         <td class="align-middle">
-            <b>Amp:</b> <a href="{wet_amp_path}">{"_".join(os.path.basename(wet_amp_path).split('_')[:2])}_wet</a><br>
+            <b>Wet+Amp:</b> <a href="{wet_amp_path}">{"_".join(os.path.basename(wet_amp_path).split('_')[:2])}_wet</a><br>
             <audio controls>
                 <source src="{wet_amp_path}" type="audio/mp3">
             </audio><br>
-            <b>DI:</b> <a href="{wet_path}">{"_".join(os.path.basename(wet_path).split('_')[:1])}</a><br>
+            <b>Wet DI:</b> <a href="{wet_path}">{"_".join(os.path.basename(wet_path).split('_')[:1])}</a><br>
             <audio controls>
                 <source src="{wet_path}" type="audio/mp3">
             </audio>
@@ -165,6 +176,13 @@ HEADER = """<!DOCTYPE html>
       crossorigin="anonymous">
 
     <style>
+    
+        .hero-section {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 2rem 0;
+        }
+
         .table-borderless td, .table-borderless th {
             border: none;
         }
@@ -211,10 +229,19 @@ HEADER = """<!DOCTYPE html>
 </head>
 
 <body>
-    <div class="text-center">
-        <div class="container"></div>
-        <h1 class="pt-5">Prism Demos</h1>
-        <a href="../index.html">Back to Home</a>        
+    <div class="hero-section text-center">
+      <div class="container">
+        <div class="mb-1"
+          style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+          <img src="../logo.svg" alt="Prism Logo" class="logo"
+            style="width: 4rem;">
+          <h1 class="display-3 font-weight-bold mb-3">All Prism demos</h1>
+        </div>
+        <p style="font-size: 1.2em; margin-bottom: 1.5rem;">
+          <a href="../index.html"
+            style="color: white;">Back to Homepage</a>
+        </p>
+      </div>
     </div>
 
     <div class="container mt-4" style="max-width: 1400px; margin-left: auto; margin-right: auto;">
@@ -234,6 +261,17 @@ FOOTER = """
             </div>
         </div>
     </div>
+
+    
+    <!-- Footer -->
+    <hr>
+    <footer class="text-center py-4">
+        <p>
+        © 2025 <a href="https://github.com/return-nihil">Ardan Dal Rì</a>
+        (return_nihil) &
+        <a href="http://domenicostefani.com">Domenico Stefani</a> (OnyxDSP)
+        </p>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
