@@ -237,10 +237,10 @@ HEADER = """<!DOCTYPE html>
             style="width: 4rem;">
           <h1 class="display-3 font-weight-bold mb-3">All Prism demos</h1>
         </div>
-        <p style="font-size: 1.2em; margin-bottom: 1.5rem;">
-          <a href="../index.html"
-            style="color: white;">Back to Homepage</a>
-        </p>
+        <div class="mt-4">
+          <a class="btn btn-outline-light btn-lg mx-2 mb-2"
+            href="../index.html">Back to Homepage</a>
+        </div>
       </div>
     </div>
 
