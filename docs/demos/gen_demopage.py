@@ -70,7 +70,7 @@ def get_table_row(idx, dry_path, dry_amp_path, wet_path, wet_amp_path, band_sett
     ]
 
     # Band headers row
-    bands_html += '<tr><tr><td style="padding-bottom: 3rem"></td></tr>'
+    bands_html += '<tr>'
     bands_html += f'<td class="align-middle left" style="width: auto;"><b>Frequency Bands:</b></td>'
     for band_idx in range(1, 9):
         bands_html += f'<td class="align-middle" style="font-size: 0.85em;">{band_labels[band_idx-1]}</td>'
@@ -190,6 +190,7 @@ HEADER = """<!DOCTYPE html>
             margin: 0 auto;
             padding: 0;
             width: 100%;
+            min-width: 800px; /* Force minimum width to ensure scrolling */
         }
         .progtab tr {
             margin: 0;
@@ -225,6 +226,19 @@ HEADER = """<!DOCTYPE html>
             width: 100%;
             max-width: 300px;
         }
+        
+        /* Critical fix for horizontal scrolling */
+        .table-scroll-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        }
+        
+        /* Smartphones */
+        @media (max-width: 600px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 
@@ -244,20 +258,26 @@ HEADER = """<!DOCTYPE html>
       </div>
     </div>
 
+    <div class="container mt-4" style="max-width: 800px; margin-left: auto; margin-right: auto;">
+        <p>This page contains audio demos fror the Prism multiband effect</p>
+        <p>All the rows first show the settings for the 8 frequency bands, which comprise per-band effect type (Fuzz, Overdrive, Distortion), Gain (0-5) and Tone (0-5)</p>
+        
+        <p>
+            Then each example contains 4 audio files: the top row shows the <b>Dry (no Prism)</b> and <b>Wet (with Prism)</b> signals, where an amplifier with cabinet simulation was used.
+            The bottom row contains the DI input and straight pedal output (<b>Dry DI</b>,<b>Wet DI</b>).
+        </p>
+    </div>
+
     <div class="container mt-4" style="max-width: 1400px; margin-left: auto; margin-right: auto;">
-        <div class="container">
-            <div id="examples" class="section mt-4">
-                <div class="row text-center justify-content-center">
-                    <div class="table-responsive">
-                        <table class="text-center table">
-                            <tbody>
+        <div id="examples" class="section mt-4">
+            <div class="table-scroll-wrapper text-center">
+                <table class="text-center table">
+                    <tbody>
 """
 
 FOOTER = """
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
