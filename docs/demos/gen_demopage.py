@@ -135,28 +135,47 @@ def get_table_row(idx, dry_path, dry_amp_path, wet_path, wet_amp_path, band_sett
         </td>
     </tr>
     <tr>
-        <td></td>
-        <td class="align-middle">
-            <b>Dry+Amp:</b> <a href="{dry_amp_path}">{os.path.basename(dry_amp_path)}</a><br>
-            <audio controls>
-                <source src="{dry_amp_path}" type="audio/mp3">
-            </audio><br>
-            <b>Dry DI:</b> <a href="{dry_path}">{os.path.basename(dry_path)}</a><br>
-            <audio controls>
-                <source src="{dry_path}" type="audio/mp3">
-            </audio>
-        </td>
-        <td class="align-middle">
-            <b>Wet+Amp:</b> <a href="{wet_amp_path}">{"_".join(os.path.basename(wet_amp_path).split('_')[:2])}_wet</a><br>
-            <audio controls>
-                <source src="{wet_amp_path}" type="audio/mp3">
-            </audio><br>
-            <b>Wet DI:</b> <a href="{wet_path}">{"_".join(os.path.basename(wet_path).split('_')[:1])}</a><br>
-            <audio controls>
-                <source src="{wet_path}" type="audio/mp3">
-            </audio>
-        </td>
-    </tr>
+    <td colspan="4">  <!-- ✅ Use TD instead of DIV -->
+        <table class="progtab text-center table table-borderless align-middle" style="width: 100%; table-layout: fixed;">
+            <tr>
+                <td class="align-middle left" style="width: 20%;">Demo with amplifier</td>
+                <td class="align-middle">
+                    <b>Dry+Amp:</b> <a href="{dry_amp_path}">{os.path.basename(dry_amp_path)}</a><br>
+                    <audio controls>
+                        <source src="{dry_amp_path}" type="audio/mp3">
+                    </audio>
+                </td>
+                <td class="align-middle">
+                    <b>Wet+Amp:</b> <a href="{wet_amp_path}">{"_".join(os.path.basename(wet_amp_path).split('_')[:2])}_wet</a><br>
+                    <audio controls>
+                        <source src="{wet_amp_path}" type="audio/mp3">
+                    </audio>
+                </td>
+                
+            </tr>
+            <tr>
+                <td colspan="3"><hr style="margin: 0;"></td>
+            </tr>
+            <tr>
+                <td class="align-middle left" style="width: 20%;">Demo without amplifier</td>
+                <td class="align-middle">
+                    <b>Dry-NoAmp:</b> <a href="{dry_path}">{os.path.basename(dry_amp_path)}</a><br>
+                    <audio controls>
+                        <source src="{dry_path}" type="audio/mp3">
+                    </audio>
+                </td>
+                <td class="align-middle">
+                    <b>Wet-NoAmp:</b> <a href="{wet_path}">{"_".join(os.path.basename(wet_amp_path).split('_')[:2])}_wet</a><br>
+                    <audio controls>
+                        <source src="{wet_path}" type="audio/mp3">
+                    </audio>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+    <tr><td colspan="3" style="height: 3rem;"></td></tr>
+
     '''
     
     return res
@@ -215,7 +234,7 @@ HEADER = """<!DOCTYPE html>
             top: -3px;
             width: 33.33%;
             height: 26px;
-            border: 2px solid #000;
+            border: 2px solid #111;
             border-radius: 4px;
             transition: left 0.3s;
         }
@@ -258,14 +277,19 @@ HEADER = """<!DOCTYPE html>
       </div>
     </div>
 
-    <div class="container mt-4" style="max-width: 800px; margin-left: auto; margin-right: auto;">
+    <div class="container mt-4" style="max-width: 800px; margin-left: auto; margin-right: auto; text-align:justify;">
         <p>This page contains audio demos fror the Prism multiband effect</p>
         <p>All the rows first show the settings for the 8 frequency bands, which comprise per-band effect type (Fuzz, Overdrive, Distortion), Gain (0-5) and Tone (0-5)</p>
         
         <p>
-            Then each example contains 4 audio files: the top row shows the <b>Dry (no Prism)</b> and <b>Wet (with Prism)</b> signals, where an amplifier with cabinet simulation was used.
-            The bottom row contains the DI input and straight pedal output (<b>Dry DI</b>,<b>Wet DI</b>).
+            Then each example contains 4 audio files: the top row shows the Dry and Wet signals (Dry: no Prism, Wet: with prism), where an amplifier with cabinet simulation was used (<a target="_blank" href="https://github.com/resonantdsp/SwankyAmp">Swanky Amp plugin</a>, clean setting).
+            The relative dry and wet audio files with amplifier are labeled as <b>Dry+Amp</b> and <b>Wet+Amp</b>.
         </p>
+        <p>
+            The second row contains the dry and wet audio files without any amplifier, labeled as <b>Dry-NoAmp</b> and <b>Wet-NoAmp</b>.
+        </p>
+
+        <p>Non-linear effects interact with amplifiers and cabinets in interesting ways (non-linearity stacks, pre-amp eq has effects on the amp's stages) and are rarely used in isolation.
     </div>
 
     <div class="container mt-4" style="max-width: 1400px; margin-left: auto; margin-right: auto;">
@@ -346,7 +370,6 @@ if __name__ == "__main__":
             if dry_path != prev_filename:
                 # print(f"Processing new source: {source_name}")
                 row = f'''
-    <tr><td colspan="3"><hr></td></tr>
     <tr>
         <td colspan="3" class="text-center" id="{source_name}"><h3>{source_name.capitalize()}</h3><a style="size: 0.5rem;" href="#index">Back to top</a></td>
     </tr>

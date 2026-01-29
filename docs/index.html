@@ -22,6 +22,16 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     }
     
+    .type-bar {
+        /* position: absolute; */
+        top: -3px;
+        width: 33.33%;
+        height: 26px;
+        border: 2px solid #111;
+        border-radius: 4px;
+        transition: left 0.3s;
+    }
+    
     .hero-section {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
@@ -201,9 +211,14 @@
 
             <p>Below are some audio demos</p>
             <p>All the rows first show the settings for the 8 frequency bands, which comprise per-band effect type (Fuzz, Overdrive, Distortion), Gain (0-5) and Tone (0-5)</p>
-            <p>Below are <b>Dry</b> and <b>Wet</b> signals</p>
-            <p>More demos <a href="./demos/demos-multiband.html">here</a>. A virtual amplifier with cabinet simulation was used for all files (<a target="_blank" href="https://github.com/resonantdsp/SwankyAmp">Swanky Amp plugin</a>, clean setting)</p>
-        </div>
+            <p>Below are <b>Dry</b> and <b>Wet</b> signals.
+            Note: both Dry and Wet signals here are processed through virtual amplifier with cabinet simulation (<a target="_blank" href="https://github.com/resonantdsp/SwankyAmp">Swanky Amp plugin</a>, clean setting)<br>
+            In the Dry signal it's just the DI instrument recording through the amp, while in the Wet signal the DI recording is first processed with Prism and then sent through the amp.<br>
+            This is because non-linear distortion effects interact with the amplifier and are almost never used in isolation.
+            </p>
+        
+            <p>Full demos including those <i>without the amp</i> are found <a href="./demos/demos-multiband.html">here</a>.</p>
+            </div>
 
         <table class="text-center table">
           <tr>
@@ -390,7 +405,7 @@
           <tr>
             <td></td>
             <td class="align-middle">
-              <b>Dry:</b> <a href="demos\dry\amp\amp_bass.mp3">amp_bass.mp3</a><br>
+              <b>Dry (DI>Amp):</b> <a href="demos\dry\amp\amp_bass.mp3">amp_bass.mp3</a><br>
               <audio controls>
                 <source src="demos\dry\amp\amp_bass.mp3" type="audio/mp3">
               </audio>
@@ -398,7 +413,7 @@
 
             </td>
             <td class="align-middle">
-              <b>Wet:</b> <a href="demos\wet\amp\amp_bass_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3">amp_bass_wet</a><br>
+              <b>Wet (DI>Prism>Amp):</b> <a href="demos\wet\amp\amp_bass_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3">amp_bass_wet</a><br>
               <audio controls>
                 <source
                   src="demos\wet\amp\amp_bass_B0PfG5T5_B1PfG4T4_B2PfG4T4_B3PfG3T3_B4PfG3T3_B5PfG2T2_B6PfG2T2_B7PfG1T1.mp3"
@@ -592,14 +607,14 @@
           <tr>
             <td></td>
             <td class="align-middle">
-              <b>Dry:</b> <a href="demos\dry\amp\amp_epiano.mp3">amp_epiano.mp3</a><br>
+              <b>Dry (DI>Amp):</b> <a href="demos\dry\amp\amp_epiano.mp3">amp_epiano.mp3</a><br>
               <audio controls>
                 <source src="demos\dry\amp\amp_epiano.mp3" type="audio/mp3">
               </audio><br>
 
             </td>
             <td class="align-middle">
-              <b>Wet:</b> <a href="demos\wet\amp\amp_epiano_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3">amp_epiano_wet</a><br>
+              <b>Wet (DI>Prism>Amp):</b> <a href="demos\wet\amp\amp_epiano_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3">amp_epiano_wet</a><br>
               <audio controls>
                 <source
                   src="demos\wet\amp\amp_epiano_B0PrG0T0_B1PkG5T5_B2PfG0T0_B3PkG5T5_B4PrG0T0_B5PkG5T5_B6PfG0T0_B7PkG5T5.mp3"
@@ -797,13 +812,13 @@
           <tr>
             <td></td>
             <td class="align-middle">
-              <b>Dry:</b> <a href="demos\dry\amp\amp_guitar-chords.mp3">amp_guitar-chords.mp3</a><br>
+              <b>Dry (DI>Amp):</b> <a href="demos\dry\amp\amp_guitar-chords.mp3">amp_guitar-chords.mp3</a><br>
               <audio controls>
                 <source src="demos\dry\amp\amp_guitar-chords.mp3" type="audio/mp3">
               </audio>
             </td>
             <td class="align-middle">
-              <b>Wet:</b> <a href="demos\wet\amp\amp_guitar-chords_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3">amp_guitar-chords_wet</a><br>
+              <b>Wet (DI>Prism>Amp):</b> <a href="demos\wet\amp\amp_guitar-chords_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3">amp_guitar-chords_wet</a><br>
               <audio controls>
                 <source
                   src="demos\wet\amp\amp_guitar-chords_B0PrG0T0_B1PrG0T0_B2PrG1T1_B3PrG2T2_B4PrG3T3_B5PrG4T4_B6PrG4T4_B7PrG5T5.mp3"
@@ -1000,7 +1015,7 @@
           <tr>
             <td></td>
             <td class="align-middle">
-              <b>Dry:</b> <a href="demos\dry\amp\amp_guitar-funk2.mp3">amp_guitar-funk2.mp3</a><br>
+              <b>Dry (DI>Amp):</b> <a href="demos\dry\amp\amp_guitar-funk2.mp3">amp_guitar-funk2.mp3</a><br>
               <audio controls>
                 <source src="demos\dry\amp\amp_guitar-funk2.mp3" type="audio/mp3">
               </audio><br>
@@ -1018,7 +1033,7 @@
 
             </td>
             <td class="align-middle">
-              <b>Wet:</b> <a href="demos\wet\amp\amp_guitar-funk2_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3">amp_guitar-funk2_wet</a><br>
+              <b>Wet (DI>Prism>Amp):</b> <a href="demos\wet\amp\amp_guitar-funk2_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3">amp_guitar-funk2_wet</a><br>
               <audio controls>
                 <source
                   src="demos\wet\amp\amp_guitar-funk2_B0PfG5T5_B1PkG0T1_B2PfG5T5_B3PkG2T2_B4PrG4T4_B5PrG3T3_B6PrG1T5_B7PrG5T2.mp3"
@@ -1215,7 +1230,7 @@
           <tr>
             <td></td>
             <td class="align-middle">
-              <b>Dry:</b> <a href="demos\dry\amp\amp_guitar-funk.mp3">amp_guitar-funk.mp3</a><br>
+              <b>Dry (DI>Amp):</b> <a href="demos\dry\amp\amp_guitar-funk.mp3">amp_guitar-funk.mp3</a><br>
               <audio controls>
                 <source src="demos\dry\amp\amp_guitar-funk.mp3" type="audio/mp3">
               </audio><br>
@@ -1233,7 +1248,7 @@
 
             </td>
             <td class="align-middle">
-              <b>Wet:</b> <a href="demos\wet\amp\amp_guitar-funk_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3">amp_guitar-funk_wet</a><br>
+              <b>Wet (DI>Prism>Amp):</b> <a href="demos\wet\amp\amp_guitar-funk_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3">amp_guitar-funk_wet</a><br>
               <audio controls>
                 <source
                   src="demos\wet\amp\amp_guitar-funk_B0PkG0T0_B1PrG5T5_B2PkG0T0_B3PfG5T5_B4PkG0T0_B5PrG5T5_B6PkG0T0_B7PfG5T5.mp3"
